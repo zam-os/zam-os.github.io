@@ -20,7 +20,6 @@
 <body>
 <style>
   :root {
-    /* Committed dark "night constellation" identity — see footer note. */
     --ink: #090a12;
     --ink-2: #0d0f1b;
     --raise: #12142200;
@@ -67,11 +66,9 @@
   p { margin: 0; }
   a { color: inherit; text-decoration: none; }
 
-  .eyebrow {
-    font-size: 0.76rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--muted);
-  }
+  .eyebrow { font-size: 0.76rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
   .eyebrow .spark { color: var(--amber); }
+  .icode { font-family: var(--font-mono); font-size: 0.85em; color: var(--violet-bright); }
 
   :focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 4px; }
 
@@ -86,12 +83,23 @@
   .brand { display: flex; align-items: center; gap: 11px; font-family: var(--font-display); font-weight: 600; font-size: 1.12rem; letter-spacing: 0.02em; }
   .brand .mark { width: 26px; height: 26px; display: block; }
   .brand small { color: var(--dim); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; margin-left: 2px; }
-  .nav-links { display: flex; align-items: center; gap: 26px; font-size: 0.92rem; color: var(--muted); }
-  .nav-links a { transition: color 0.2s; }
-  .nav-links a:hover { color: var(--text); }
+  .nav-links { display: flex; align-items: center; gap: 20px; font-size: 0.92rem; color: var(--muted); }
+  .nav-links > a { transition: color 0.2s; }
+  .nav-links > a:hover { color: var(--text); }
   .nav-links .ghost { display: inline-flex; align-items: center; gap: 7px; padding: 8px 15px; border: 1px solid var(--line-strong); border-radius: 10px; color: var(--text); }
   .nav-links .ghost:hover { border-color: var(--violet); background: rgba(138,123,243,0.08); }
-  @media (max-width: 620px) { .nav-links .hide-sm { display: none; } }
+
+  .lang { display: flex; align-items: center; gap: 6px; }
+  .lang .globe { width: 15px; height: 15px; color: var(--muted); flex: none; }
+  .lang select {
+    appearance: none; -webkit-appearance: none;
+    background: rgba(255,255,255,0.03) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="7" viewBox="0 0 10 7" fill="none" stroke="%239aa1c0" stroke-width="1.5" stroke-linecap="round"><path d="M1 1l4 4 4-4"/></svg>') no-repeat right 9px center;
+    color: var(--text); border: 1px solid var(--line-strong); border-radius: 9px;
+    padding: 7px 28px 7px 11px; font-family: var(--font-body); font-size: 0.85rem; cursor: pointer; transition: border-color 0.2s;
+  }
+  .lang select:hover { border-color: var(--violet); }
+  .lang select option { background: #12142a; color: var(--text); }
+  @media (max-width: 640px) { .nav-links .hide-sm { display: none; } .lang .globe { display: none; } }
 
   /* ---------- Hero ---------- */
   .hero { position: relative; overflow: hidden; padding: clamp(72px, 13vw, 150px) 0 clamp(60px, 9vw, 110px); }
@@ -227,8 +235,20 @@
         ZAM <small>Zusammen</small>
       </a>
       <nav class="nav-links">
-        <a class="hide-sm" href="#what">What it does</a>
-        <a class="hide-sm" href="#start">Get started</a>
+        <a class="hide-sm" href="#what" data-i18n="nav_what">What it does</a>
+        <a class="hide-sm" href="#start" data-i18n="nav_start">Get started</a>
+        <span class="lang">
+          <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>
+          <select id="langSel" aria-label="Language">
+            <option value="en">English</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="pt">Português</option>
+            <option value="zh">中文</option>
+            <option value="ja">日本語</option>
+          </select>
+        </span>
         <a class="ghost" href="https://github.com/zam-os/zam">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7 0-.7 0-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 5.3 18.3 5.6 18.3 5.6c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
           GitHub
@@ -244,14 +264,14 @@
       <div class="hero-veil"></div>
       <div class="wrap">
         <div class="hero-content">
-          <p class="eyebrow">Don't just automate — <span class="spark">elevate</span></p>
-          <h1>Do real work with your AI — and&nbsp;keep the knowledge instead of losing&nbsp;it.</h1>
-          <p class="lead">ZAM turns everyday work with your agent into active-recall practice. The task gets done <strong>and</strong> you get sharper — automation without the dependence.</p>
+          <p class="eyebrow" data-i18n="hero_eyebrow">Don't just automate — <span class="spark">elevate</span></p>
+          <h1 data-i18n="hero_h1">Do real work with your AI — and&nbsp;keep the knowledge instead of losing&nbsp;it.</h1>
+          <p class="lead" data-i18n="hero_lead">ZAM turns everyday work with your agent into active-recall practice. The task gets done <strong>and</strong> you get sharper — automation without the dependence.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#start">Get started
+            <a class="btn btn-primary" href="#start"><span data-i18n="hero_cta1">Get started</span>
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a class="btn btn-ghost" href="https://github.com/zam-os/zam">Read the source</a>
+            <a class="btn btn-ghost" href="https://github.com/zam-os/zam" data-i18n="hero_cta2">Read the source</a>
           </div>
         </div>
       </div>
@@ -261,29 +281,29 @@
     <section class="section" id="what">
       <div class="wrap">
         <div class="section-head reveal">
-          <p class="eyebrow">What it does today</p>
-          <h2>A learning layer that rides along — not a flashcard app bolted onto your day.</h2>
+          <p class="eyebrow" data-i18n="what_eyebrow">What it does today</p>
+          <h2 data-i18n="what_h2">A learning layer that rides along — not a flashcard app bolted onto your day.</h2>
         </div>
         <div class="cap-grid reveal">
           <div class="cap">
             <svg class="glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5v22M15 5v22"/><path d="M20 9c4 2 4 12 0 14" opacity="0.6"/><path d="M24 6c6 3 6 17 0 20" opacity="0.3"/></svg>
-            <h3>Rides along in your agent</h3>
-            <p>As you work a real task, ZAM breaks it into small concepts, sees which are due to revisit, and weaves them into the session.</p>
+            <h3 data-i18n="cap1_h3">Rides along in your agent</h3>
+            <p data-i18n="cap1_p">As you work a real task, ZAM breaks it into small concepts, sees which are due to revisit, and weaves them into the session.</p>
           </div>
           <div class="cap">
             <svg class="glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16Z"/><circle cx="16" cy="16" r="3.4"/></svg>
-            <h3>Watches, doesn't quiz</h3>
-            <p>Do a step well on your own and it's quietly marked learned. ZAM only asks when it can't tell from your work. <b>The best session is one you barely notice.</b></p>
+            <h3 data-i18n="cap2_h3">Watches, doesn't quiz</h3>
+            <p data-i18n="cap2_p">Do a step well on your own and it's quietly marked learned. ZAM only asks when it can't tell from your work. <b>The best session is one you barely notice.</b></p>
           </div>
           <div class="cap">
             <svg class="glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22c3 0 3-9 6-9s3 5 6 5 3-11 6-11 3 7 4 7"/><path d="M4 27h24" opacity="0.35"/></svg>
-            <h3>Catches what you forget</h3>
-            <p>Every concept is scheduled with FSRS-5 spaced repetition over a prerequisite graph — resurfaced right before it would slip.</p>
+            <h3 data-i18n="cap3_h3">Catches what you forget</h3>
+            <p data-i18n="cap3_p">Every concept is scheduled with FSRS-5 spaced repetition over a prerequisite graph — resurfaced right before it would slip.</p>
           </div>
           <div class="cap">
             <svg class="glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="14" width="20" height="13" rx="2.5"/><path d="M11 14V9a5 5 0 0 1 10 0v5"/><circle cx="16" cy="20.5" r="1.6" fill="currentColor" stroke="none"/></svg>
-            <h3>Stays on your machine</h3>
-            <p>One local SQLite database, shared by the agent and the desktop app. Review works offline; local LLMs are supported.</p>
+            <h3 data-i18n="cap4_h3">Stays on your machine</h3>
+            <p data-i18n="cap4_p">One local SQLite database, shared by the agent and the desktop app. Review works offline; local LLMs are supported.</p>
           </div>
         </div>
       </div>
@@ -293,15 +313,15 @@
     <section class="section" id="places">
       <div class="wrap">
         <div class="section-head reveal">
-          <p class="eyebrow">Two places, one brain</p>
-          <h2>Your agent is the workbench. The Studio is for setup, content&nbsp;&amp; the graph.</h2>
-          <p>Both share the same local database, so progress in one shows up in the other.</p>
+          <p class="eyebrow" data-i18n="places_eyebrow">Two places, one brain</p>
+          <h2 data-i18n="places_h2">Your agent is the workbench. The Studio is for setup, content&nbsp;&amp; the graph.</h2>
+          <p data-i18n="places_sub">Both share the same local database, so progress in one shows up in the other.</p>
         </div>
         <div class="split">
           <div class="place workbench reveal">
-            <p class="tag">In your AI agent</p>
-            <h3>The workbench</h3>
-            <p>Where the real learning happens: real tasks become practice, ZAM observes your work, and guides you step by step. One command wires it in over MCP — then just type <code style="font-family:var(--font-mono);font-size:0.85em;color:var(--violet-bright)">/zam</code>.</p>
+            <p class="tag" data-i18n="wb_tag">In your AI agent</p>
+            <h3 data-i18n="wb_h3">The workbench</h3>
+            <p data-i18n="wb_p">Where the real learning happens: real tasks become practice, ZAM observes your work, and guides you step by step. One command wires it in over MCP — then just type <code class="icode">/zam</code>.</p>
             <div class="chips">
               <span class="chip"><span class="dot"></span>Claude</span>
               <span class="chip"><span class="dot"></span>Codex</span>
@@ -310,19 +330,19 @@
               <span class="chip"><span class="dot"></span>GitHub Copilot</span>
               <span class="chip"><span class="dot"></span>Goose</span>
             </div>
-            <p class="note">Observation and guided task-work happen here, inside your agent.</p>
+            <p class="note" data-i18n="wb_note">Observation and guided task-work happen here, inside your agent.</p>
           </div>
           <div class="place studio reveal">
             <p class="tag">ZAM Desktop Studio</p>
-            <h3>Setup, content &amp; graph</h3>
-            <p>A native app for the things a chat window isn't good at.</p>
+            <h3 data-i18n="st_h3">Setup, content &amp; graph</h3>
+            <p data-i18n="st_p">A native app for the things a chat window isn't good at.</p>
             <ul class="feat-list">
-              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span><b>Easier configuration</b> — language and local AI model in a settings panel, not a config file.</span></li>
-              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span><b>Import your material</b> — paste notes, point at a source, or walk a curriculum; a wizard turns it into cards.</span></li>
-              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span><b>See your knowledge graph</b> — concepts as a living map of what builds on what.</span></li>
-              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span><b>Review</b> — focused active-recall rounds, right in the app.</span></li>
+              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="st_f1"><b>Easier configuration</b> — language and local AI model in a settings panel, not a config file.</span></li>
+              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="st_f2"><b>Import your material</b> — paste notes, point at a source, or walk a curriculum; a wizard turns it into cards.</span></li>
+              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="st_f3"><b>See your knowledge graph</b> — concepts as a living map of what builds on what.</span></li>
+              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="st_f4"><b>Review</b> — focused active-recall rounds, right in the app.</span></li>
             </ul>
-            <p class="note">Review works in both places.</p>
+            <p class="note" data-i18n="st_note">Review works in both places.</p>
           </div>
         </div>
       </div>
@@ -333,21 +353,21 @@
       <div class="wrap">
         <div class="qs-layout">
           <div class="qs-copy reveal">
-            <p class="eyebrow">Quickstart</p>
-            <h2>Three commands to your first session.</h2>
+            <p class="eyebrow" data-i18n="qs_eyebrow">Quickstart</p>
+            <h2 data-i18n="qs_h2">Three commands to your first session.</h2>
             <ol class="qs-steps">
-              <li><span><b>Set up</b> — one guided wizard picks a workspace, a local AI runner, and wires the skill.</span></li>
-              <li><span><b>Connect</b> your agent over MCP with <code>zam agent connect</code>.</span></li>
-              <li><span><b>Work</b> — start a real task and type <code>/zam</code>. It handles the rest.</span></li>
+              <li><span data-i18n="qs_s1"><b>Set up</b> — one guided wizard picks a workspace, a local AI runner, and wires the skill.</span></li>
+              <li><span data-i18n="qs_s2"><b>Connect</b> your agent over MCP with <code>zam agent connect</code>.</span></li>
+              <li><span data-i18n="qs_s3"><b>Work</b> — start a real task and type <code>/zam</code>. It handles the rest.</span></li>
             </ol>
           </div>
           <div class="term reveal" role="figure" aria-label="ZAM quickstart commands">
             <div class="term-bar">
               <span class="b"></span><span class="b"></span><span class="b"></span>
               <span class="t">zsh — ~/dev</span>
-              <button class="copy" id="copyBtn" type="button">Copy</button>
+              <button class="copy" id="copyBtn" type="button" data-i18n="copy_btn">Copy</button>
             </div>
-            <div class="term-body" id="termBody"><div class="line"><span class="prompt">$</span> <span class="cmd">zam init</span>                   <span class="cmt"># guided setup</span></div><div class="line"><span class="out">✓ workspace · local AI · database · /zam skill</span></div><div class="line">&nbsp;</div><div class="line"><span class="prompt">$</span> <span class="cmd">zam agent connect claude-code</span>   <span class="cmt"># or codex · copilot · goose …</span></div><div class="line"><span class="out">✓ MCP server configured</span></div><div class="line">&nbsp;</div><div class="line"><span class="cmt"># open your agent, start a task, then:</span></div><div class="line"><span class="prompt">›</span> <span class="cmd">/zam</span></div></div>
+            <div class="term-body" id="termBody"><div class="line"><span class="prompt">$</span> <span class="cmd">zam init</span>                   <span class="cmt" data-i18n="term_cmt1"># guided setup</span></div><div class="line"><span class="out" data-i18n="term_ok1">✓ workspace · local AI · database · /zam skill</span></div><div class="line">&nbsp;</div><div class="line"><span class="prompt">$</span> <span class="cmd">zam agent connect claude-code</span>   <span class="cmt" data-i18n="term_cmt2"># or codex · copilot · goose …</span></div><div class="line"><span class="out" data-i18n="term_ok2">✓ MCP server configured</span></div><div class="line">&nbsp;</div><div class="line"><span class="cmt" data-i18n="term_cmt3"># open your agent, start a task, then:</span></div><div class="line"><span class="prompt">›</span> <span class="cmd">/zam</span></div></div>
           </div>
         </div>
       </div>
@@ -357,16 +377,16 @@
     <section class="section" id="how">
       <div class="wrap">
         <div class="section-head reveal">
-          <p class="eyebrow">How it works</p>
-          <h2>A small, honest vocabulary.</h2>
+          <p class="eyebrow" data-i18n="how_eyebrow">How it works</p>
+          <h2 data-i18n="how_h2">A small, honest vocabulary.</h2>
         </div>
         <div class="how-grid reveal">
-          <dl class="term-def"><dt>token</dt><dd>One atomic concept worth remembering, tagged with a Bloom level (1 remember → 5 create).</dd></dl>
-          <dl class="term-def"><dt>card</dt><dd>Your personal spaced-repetition state for a token, scheduled by FSRS-5.</dd></dl>
-          <dl class="term-def"><dt>prerequisite</dt><dd>A graph of what must be understood first. ZAM won't quiz a concept whose foundations just slipped.</dd></dl>
-          <dl class="term-def"><dt>session</dt><dd>Every work-and-learning episode is logged, so ratings come from real evidence.</dd></dl>
+          <dl class="term-def"><dt>token</dt><dd data-i18n="def_token">One atomic concept worth remembering, tagged with a Bloom level (1 remember → 5 create).</dd></dl>
+          <dl class="term-def"><dt>card</dt><dd data-i18n="def_card">Your personal spaced-repetition state for a token, scheduled by FSRS-5.</dd></dl>
+          <dl class="term-def"><dt>prerequisite</dt><dd data-i18n="def_prereq">A graph of what must be understood first. ZAM won't quiz a concept whose foundations just slipped.</dd></dl>
+          <dl class="term-def"><dt>session</dt><dd data-i18n="def_session">Every work-and-learning episode is logged, so ratings come from real evidence.</dd></dl>
         </div>
-        <p class="how-foot reveal">The learning engine is an <b>AI-agnostic kernel</b> with zero LLM dependencies — your agent just drives it. Open source, Apache-2.0.</p>
+        <p class="how-foot reveal" data-i18n="how_foot">The learning engine is an <b>AI-agnostic kernel</b> with zero LLM dependencies — your agent just drives it. Open source, Apache-2.0.</p>
       </div>
     </section>
   </main>
@@ -381,20 +401,20 @@
           </svg>
           ZAM 🤝
         </div>
-        <p><span class="zam-note">Zam — Bavarian for "together".</span> A symbiotic learning kernel: as your AI grows more capable, so do you.</p>
+        <p data-i18n="foot_tagline"><span class="zam-note">Zam — Bavarian for "together".</span> A symbiotic learning kernel: as your AI grows more capable, so do you.</p>
       </div>
       <div class="foot-links">
         <div class="grp">
-          <span>Project</span>
-          <a href="https://github.com/zam-os/zam">Source</a>
-          <a href="https://github.com/zam-os/zam/blob/main/docs/USAGE.md">Usage</a>
-          <a href="https://github.com/zam-os/zam/tree/main/docs">Architecture</a>
+          <span data-i18n="foot_grp_project">Project</span>
+          <a href="https://github.com/zam-os/zam" data-i18n="foot_project_source">Source</a>
+          <a href="https://github.com/zam-os/zam/blob/main/docs/USAGE.md" data-i18n="foot_project_usage">Usage</a>
+          <a href="https://github.com/zam-os/zam/tree/main/docs" data-i18n="foot_project_arch">Architecture</a>
         </div>
         <div class="grp">
-          <span>Start</span>
-          <a href="https://github.com/zam-os/zam/releases">Download</a>
-          <a href="https://github.com/zam-os/zam#quickstart">Quickstart</a>
-          <a href="https://github.com/zam-os/zam/blob/main/CONTRIBUTING.md">Contribute</a>
+          <span data-i18n="foot_grp_start">Start</span>
+          <a href="https://github.com/zam-os/zam/releases" data-i18n="foot_start_download">Download</a>
+          <a href="https://github.com/zam-os/zam#quickstart" data-i18n="foot_start_quickstart">Quickstart</a>
+          <a href="https://github.com/zam-os/zam/blob/main/CONTRIBUTING.md" data-i18n="foot_start_contribute">Contribute</a>
         </div>
       </div>
       <div class="legal">
@@ -406,29 +426,359 @@
 </div>
 
 <script>
+/* ---------- i18n ---------- */
+(function () {
+  var LOCALES = ["en", "de", "es", "fr", "pt", "zh", "ja"];
+  var TITLES = {
+    en: "ZAM — keep the knowledge",
+    de: "ZAM — das Wissen behalten",
+    es: "ZAM — conserva el conocimiento",
+    fr: "ZAM — garder le savoir",
+    pt: "ZAM — fica com o conhecimento",
+    zh: "ZAM — 把知识留下",
+    ja: "ZAM — 知識を手元に"
+  };
+  var T = {
+    de: {
+      nav_what: `Was es kann`, nav_start: `Loslegen`,
+      hero_eyebrow: `Nicht nur automatisieren — <span class="spark">wachsen</span>`,
+      hero_h1: `Arbeite echt mit deiner KI — und behalte das Wissen, statt es zu verlieren.`,
+      hero_lead: `ZAM macht aus deiner täglichen Arbeit mit dem Agenten aktives Erinnern. Die Aufgabe wird erledigt <strong>und</strong> du wirst besser — Automatisierung ohne Abhängigkeit.`,
+      hero_cta1: `Loslegen`, hero_cta2: `Zum Quellcode`,
+      what_eyebrow: `Was es heute kann`,
+      what_h2: `Eine Lernschicht, die mitläuft — keine Karteikarten-App, die auf deinen Tag geschnallt wird.`,
+      cap1_h3: `Läuft in deinem Agenten mit`,
+      cap1_p: `Während du an einer echten Aufgabe arbeitest, zerlegt ZAM sie in kleine Konzepte, erkennt, welche zur Wiederholung anstehen, und webt sie in die Sitzung ein.`,
+      cap2_h3: `Beobachtet, statt abzufragen`,
+      cap2_p: `Machst du einen Schritt selbst gut, wird er still als gelernt markiert. ZAM fragt nur, wenn es aus deiner Arbeit nicht erkennbar ist. <b>Die beste Sitzung ist die, die du kaum bemerkst.</b>`,
+      cap3_h3: `Fängt auf, was du vergisst`,
+      cap3_p: `Jedes Konzept wird mit FSRS-5-Wiederholung über einen Voraussetzungsgraphen geplant — genau dann wieder aufgetaucht, bevor es entgleitet.`,
+      cap4_h3: `Bleibt auf deinem Rechner`,
+      cap4_p: `Eine lokale SQLite-Datenbank, geteilt von Agent und Desktop-App. Wiederholen geht offline; lokale LLMs werden unterstützt.`,
+      places_eyebrow: `Zwei Orte, ein Gehirn`,
+      places_h2: `Dein Agent ist die Werkbank. Das Studio ist für Einrichtung, Inhalte &amp; den Graphen.`,
+      places_sub: `Beide teilen dieselbe lokale Datenbank — Fortschritt an einem Ort erscheint am anderen.`,
+      wb_tag: `In deinem KI-Agenten`, wb_h3: `Die Werkbank`,
+      wb_p: `Hier passiert das echte Lernen: Aufgaben werden zur Übung, ZAM beobachtet deine Arbeit und führt dich Schritt für Schritt. Ein Befehl bindet es über MCP ein — dann tippst du einfach <code class="icode">/zam</code>.`,
+      wb_note: `Beobachtung und begleitete Aufgaben passieren hier, in deinem Agenten.`,
+      st_h3: `Einrichtung, Inhalte &amp; Graph`,
+      st_p: `Eine native App für das, worin ein Chatfenster schlecht ist.`,
+      st_f1: `<b>Einfachere Konfiguration</b> — Sprache und lokales KI-Modell in einem Einstellungsfenster, nicht in einer Konfigdatei.`,
+      st_f2: `<b>Eigenes Material importieren</b> — Notizen einfügen, auf eine Quelle zeigen oder einen Lehrplan durchgehen; ein Assistent macht Karten daraus.`,
+      st_f3: `<b>Deinen Wissensgraphen sehen</b> — Konzepte als lebendige Karte dessen, was worauf aufbaut.`,
+      st_f4: `<b>Wiederholen</b> — fokussierte Active-Recall-Runden, direkt in der App.`,
+      st_note: `Wiederholen geht an beiden Orten.`,
+      qs_eyebrow: `Schnellstart`, qs_h2: `Drei Befehle bis zur ersten Sitzung.`,
+      qs_s1: `<b>Einrichten</b> — ein geführter Assistent wählt einen Arbeitsbereich, eine lokale KI und bindet die Skill ein.`,
+      qs_s2: `<b>Verbinde</b> deinen Agenten über MCP mit <code>zam agent connect</code>.`,
+      qs_s3: `<b>Arbeite</b> — starte eine echte Aufgabe und tippe <code>/zam</code>. Den Rest übernimmt es.`,
+      copy_btn: `Kopieren`,
+      term_cmt1: `# geführte Einrichtung`, term_ok1: `✓ Arbeitsbereich · lokale KI · Datenbank · /zam-Skill`,
+      term_cmt2: `# oder codex · copilot · goose …`, term_ok2: `✓ MCP-Server konfiguriert`,
+      term_cmt3: `# öffne deinen Agenten, starte eine Aufgabe, dann:`,
+      how_eyebrow: `So funktioniert es`, how_h2: `Ein kleines, ehrliches Vokabular.`,
+      def_token: `Ein atomares Konzept, das es sich zu merken lohnt, mit einer Bloom-Stufe (1 erinnern → 5 erschaffen).`,
+      def_card: `Dein persönlicher Wiederholungszustand für ein Token, geplant von FSRS-5.`,
+      def_prereq: `Ein Graph dessen, was zuerst verstanden sein muss. ZAM fragt kein Konzept ab, dessen Grundlagen gerade entglitten sind.`,
+      def_session: `Jede Arbeits- und Lernepisode wird protokolliert, damit Bewertungen aus echten Belegen stammen.`,
+      how_foot: `Die Lern-Engine ist ein <b>KI-agnostischer Kernel</b> ohne jede LLM-Abhängigkeit — dein Agent steuert ihn nur. Open Source, Apache-2.0.`,
+      foot_tagline: `<span class="zam-note">Zam — bairisch für „zusammen".</span> Ein symbiotischer Lern-Kernel: Wird deine KI fähiger, wirst du es auch.`,
+      foot_grp_project: `Projekt`, foot_project_source: `Quellcode`, foot_project_usage: `Nutzung`, foot_project_arch: `Architektur`,
+      foot_grp_start: `Start`, foot_start_download: `Download`, foot_start_quickstart: `Schnellstart`, foot_start_contribute: `Mitmachen`
+    },
+    es: {
+      nav_what: `Qué hace`, nav_start: `Empezar`,
+      hero_eyebrow: `No solo automatices — <span class="spark">crece</span>`,
+      hero_h1: `Haz trabajo real con tu IA — y quédate con el conocimiento en vez de perderlo.`,
+      hero_lead: `ZAM convierte el trabajo diario con tu agente en práctica de recuerdo activo. La tarea se hace <strong>y</strong> tú mejoras — automatización sin dependencia.`,
+      hero_cta1: `Empezar`, hero_cta2: `Ver el código`,
+      what_eyebrow: `Lo que hace hoy`,
+      what_h2: `Una capa de aprendizaje que te acompaña — no una app de tarjetas pegada a tu día.`,
+      cap1_h3: `Te acompaña en tu agente`,
+      cap1_p: `Mientras trabajas en una tarea real, ZAM la divide en conceptos pequeños, ve cuáles toca repasar y los entreteje en la sesión.`,
+      cap2_h3: `Observa, no interroga`,
+      cap2_p: `Si haces bien un paso por tu cuenta, se marca en silencio como aprendido. ZAM solo pregunta cuando no puede saberlo por tu trabajo. <b>La mejor sesión es la que apenas notas.</b>`,
+      cap3_h3: `Recupera lo que olvidas`,
+      cap3_p: `Cada concepto se programa con repetición espaciada FSRS-5 sobre un grafo de prerrequisitos — reaparece justo antes de que se te escape.`,
+      cap4_h3: `Se queda en tu equipo`,
+      cap4_p: `Una base de datos SQLite local, compartida por el agente y la app de escritorio. El repaso funciona sin conexión; se admiten LLM locales.`,
+      places_eyebrow: `Dos lugares, un cerebro`,
+      places_h2: `Tu agente es el banco de trabajo. El Studio es para configuración, contenido &amp; el grafo.`,
+      places_sub: `Ambos comparten la misma base de datos local, así que el progreso en uno aparece en el otro.`,
+      wb_tag: `En tu agente de IA`, wb_h3: `El banco de trabajo`,
+      wb_p: `Donde ocurre el aprendizaje real: las tareas se vuelven práctica, ZAM observa tu trabajo y te guía paso a paso. Un comando lo conecta por MCP — luego solo escribe <code class="icode">/zam</code>.`,
+      wb_note: `La observación y las tareas guiadas ocurren aquí, dentro de tu agente.`,
+      st_h3: `Configuración, contenido &amp; grafo`,
+      st_p: `Una app nativa para lo que un chat no hace bien.`,
+      st_f1: `<b>Configuración más fácil</b> — idioma y modelo de IA local en un panel de ajustes, no en un archivo de configuración.`,
+      st_f2: `<b>Importa tu material</b> — pega notas, apunta a una fuente o recorre un temario; un asistente lo convierte en tarjetas.`,
+      st_f3: `<b>Mira tu grafo de conocimiento</b> — los conceptos como un mapa vivo de lo que se apoya en qué.`,
+      st_f4: `<b>Repasa</b> — rondas de recuerdo activo enfocadas, en la propia app.`,
+      st_note: `El repaso funciona en ambos lugares.`,
+      qs_eyebrow: `Inicio rápido`, qs_h2: `Tres comandos hasta tu primera sesión.`,
+      qs_s1: `<b>Configura</b> — un asistente elige un espacio de trabajo, una IA local y conecta la skill.`,
+      qs_s2: `<b>Conecta</b> tu agente por MCP con <code>zam agent connect</code>.`,
+      qs_s3: `<b>Trabaja</b> — empieza una tarea real y escribe <code>/zam</code>. Se encarga del resto.`,
+      copy_btn: `Copiar`,
+      term_cmt1: `# configuración guiada`, term_ok1: `✓ espacio de trabajo · IA local · base de datos · skill /zam`,
+      term_cmt2: `# o codex · copilot · goose …`, term_ok2: `✓ servidor MCP configurado`,
+      term_cmt3: `# abre tu agente, empieza una tarea y luego:`,
+      how_eyebrow: `Cómo funciona`, how_h2: `Un vocabulario pequeño y honesto.`,
+      def_token: `Un concepto atómico que vale la pena recordar, con un nivel de Bloom (1 recordar → 5 crear).`,
+      def_card: `Tu estado personal de repetición espaciada para un token, programado por FSRS-5.`,
+      def_prereq: `Un grafo de lo que hay que entender primero. ZAM no pregunta un concepto cuyas bases se acaban de escapar.`,
+      def_session: `Cada episodio de trabajo y aprendizaje queda registrado, así las valoraciones vienen de pruebas reales.`,
+      how_foot: `El motor de aprendizaje es un <b>kernel agnóstico de IA</b> sin ninguna dependencia de LLM — tu agente solo lo maneja. Código abierto, Apache-2.0.`,
+      foot_tagline: `<span class="zam-note">Zam — bávaro para "juntos".</span> Un kernel de aprendizaje simbiótico: cuanto más capaz es tu IA, más capaz eres tú.`,
+      foot_grp_project: `Proyecto`, foot_project_source: `Código`, foot_project_usage: `Uso`, foot_project_arch: `Arquitectura`,
+      foot_grp_start: `Empezar`, foot_start_download: `Descargar`, foot_start_quickstart: `Inicio rápido`, foot_start_contribute: `Contribuir`
+    },
+    fr: {
+      nav_what: `Ce qu'il fait`, nav_start: `Commencer`,
+      hero_eyebrow: `Ne pas juste automatiser — <span class="spark">grandir</span>`,
+      hero_h1: `Fais du vrai travail avec ton IA — et garde le savoir au lieu de le perdre.`,
+      hero_lead: `ZAM transforme ton travail quotidien avec ton agent en rappel actif. La tâche est faite <strong>et</strong> tu progresses — l'automatisation sans la dépendance.`,
+      hero_cta1: `Commencer`, hero_cta2: `Voir le code`,
+      what_eyebrow: `Ce qu'il fait aujourd'hui`,
+      what_h2: `Une couche d'apprentissage qui t'accompagne — pas une appli de cartes greffée sur ta journée.`,
+      cap1_h3: `T'accompagne dans ton agent`,
+      cap1_p: `Pendant que tu travailles sur une vraie tâche, ZAM la découpe en petits concepts, repère ceux à revoir et les tisse dans la session.`,
+      cap2_h3: `Observe, n'interroge pas`,
+      cap2_p: `Réussis une étape seul et elle est discrètement marquée apprise. ZAM ne demande que s'il ne peut pas le déduire de ton travail. <b>La meilleure session est celle que tu remarques à peine.</b>`,
+      cap3_h3: `Rattrape ce que tu oublies`,
+      cap3_p: `Chaque concept est planifié par répétition espacée FSRS-5 sur un graphe de prérequis — ressorti juste avant qu'il ne t'échappe.`,
+      cap4_h3: `Reste sur ta machine`,
+      cap4_p: `Une base SQLite locale, partagée par l'agent et l'appli de bureau. La révision marche hors ligne ; les LLM locaux sont pris en charge.`,
+      places_eyebrow: `Deux endroits, un cerveau`,
+      places_h2: `Ton agent est l'établi. Le Studio sert à la configuration, au contenu &amp; au graphe.`,
+      places_sub: `Les deux partagent la même base locale : la progression d'un côté apparaît de l'autre.`,
+      wb_tag: `Dans ton agent IA`, wb_h3: `L'établi`,
+      wb_p: `Là où l'apprentissage réel se passe : les tâches deviennent de la pratique, ZAM observe ton travail et te guide pas à pas. Une commande le branche via MCP — puis tape simplement <code class="icode">/zam</code>.`,
+      wb_note: `L'observation et les tâches guidées se passent ici, dans ton agent.`,
+      st_h3: `Configuration, contenu &amp; graphe`,
+      st_p: `Une appli native pour ce qu'une fenêtre de chat fait mal.`,
+      st_f1: `<b>Configuration plus simple</b> — langue et modèle d'IA local dans un panneau de réglages, pas un fichier de config.`,
+      st_f2: `<b>Importe ton matériel</b> — colle des notes, pointe une source ou parcours un programme ; un assistant en fait des cartes.`,
+      st_f3: `<b>Vois ton graphe de connaissances</b> — les concepts en carte vivante de ce qui repose sur quoi.`,
+      st_f4: `<b>Révise</b> — des séries de rappel actif ciblées, directement dans l'appli.`,
+      st_note: `La révision marche aux deux endroits.`,
+      qs_eyebrow: `Démarrage rapide`, qs_h2: `Trois commandes jusqu'à ta première session.`,
+      qs_s1: `<b>Configure</b> — un assistant choisit un espace de travail, une IA locale et branche la skill.`,
+      qs_s2: `<b>Connecte</b> ton agent via MCP avec <code>zam agent connect</code>.`,
+      qs_s3: `<b>Travaille</b> — lance une vraie tâche et tape <code>/zam</code>. Il gère le reste.`,
+      copy_btn: `Copier`,
+      term_cmt1: `# configuration guidée`, term_ok1: `✓ espace de travail · IA locale · base de données · skill /zam`,
+      term_cmt2: `# ou codex · copilot · goose …`, term_ok2: `✓ serveur MCP configuré`,
+      term_cmt3: `# ouvre ton agent, lance une tâche, puis :`,
+      how_eyebrow: `Comment ça marche`, how_h2: `Un petit vocabulaire honnête.`,
+      def_token: `Un concept atomique qui vaut la peine d'être retenu, avec un niveau de Bloom (1 se souvenir → 5 créer).`,
+      def_card: `Ton état personnel de répétition espacée pour un token, planifié par FSRS-5.`,
+      def_prereq: `Un graphe de ce qu'il faut comprendre d'abord. ZAM n'interroge pas un concept dont les bases viennent de t'échapper.`,
+      def_session: `Chaque épisode de travail et d'apprentissage est journalisé, pour que les notes viennent de preuves réelles.`,
+      how_foot: `Le moteur d'apprentissage est un <b>noyau agnostique de l'IA</b> sans aucune dépendance LLM — ton agent ne fait que le piloter. Open source, Apache-2.0.`,
+      foot_tagline: `<span class="zam-note">Zam — bavarois pour « ensemble ».</span> Un noyau d'apprentissage symbiotique : plus ton IA devient capable, plus tu l'es aussi.`,
+      foot_grp_project: `Projet`, foot_project_source: `Code`, foot_project_usage: `Utilisation`, foot_project_arch: `Architecture`,
+      foot_grp_start: `Démarrer`, foot_start_download: `Télécharger`, foot_start_quickstart: `Démarrage rapide`, foot_start_contribute: `Contribuer`
+    },
+    pt: {
+      nav_what: `O que faz`, nav_start: `Começar`,
+      hero_eyebrow: `Não apenas automatizar — <span class="spark">crescer</span>`,
+      hero_h1: `Faz trabalho real com a tua IA — e fica com o conhecimento em vez de o perderes.`,
+      hero_lead: `A ZAM transforma o teu trabalho diário com o agente em recordação ativa. A tarefa fica feita <strong>e</strong> ficas melhor — automação sem dependência.`,
+      hero_cta1: `Começar`, hero_cta2: `Ver o código`,
+      what_eyebrow: `O que faz hoje`,
+      what_h2: `Uma camada de aprendizagem que te acompanha — não uma app de cartões colada ao teu dia.`,
+      cap1_h3: `Acompanha-te no teu agente`,
+      cap1_p: `Enquanto trabalhas numa tarefa real, a ZAM divide-a em pequenos conceitos, vê quais estão para rever e entrelaça-os na sessão.`,
+      cap2_h3: `Observa, não interroga`,
+      cap2_p: `Se fizeres bem um passo sozinho, fica silenciosamente marcado como aprendido. A ZAM só pergunta quando não consegue perceber pelo teu trabalho. <b>A melhor sessão é a que mal reparas.</b>`,
+      cap3_h3: `Recupera o que esqueces`,
+      cap3_p: `Cada conceito é agendado com repetição espaçada FSRS-5 sobre um grafo de pré-requisitos — reaparece mesmo antes de te escapar.`,
+      cap4_h3: `Fica na tua máquina`,
+      cap4_p: `Uma base de dados SQLite local, partilhada pelo agente e pela app de ambiente de trabalho. A revisão funciona offline; há suporte para LLMs locais.`,
+      places_eyebrow: `Dois lugares, um cérebro`,
+      places_h2: `O teu agente é a bancada. O Studio é para configuração, conteúdo &amp; o grafo.`,
+      places_sub: `Ambos partilham a mesma base de dados local, por isso o progresso num aparece no outro.`,
+      wb_tag: `No teu agente de IA`, wb_h3: `A bancada`,
+      wb_p: `Onde acontece a aprendizagem real: as tarefas tornam-se prática, a ZAM observa o teu trabalho e guia-te passo a passo. Um comando liga-a por MCP — depois é só escrever <code class="icode">/zam</code>.`,
+      wb_note: `A observação e as tarefas guiadas acontecem aqui, dentro do teu agente.`,
+      st_h3: `Configuração, conteúdo &amp; grafo`,
+      st_p: `Uma app nativa para aquilo em que uma janela de chat é fraca.`,
+      st_f1: `<b>Configuração mais fácil</b> — idioma e modelo de IA local num painel de definições, não num ficheiro de configuração.`,
+      st_f2: `<b>Importa o teu material</b> — cola notas, aponta para uma fonte ou percorre um currículo; um assistente transforma-o em cartões.`,
+      st_f3: `<b>Vê o teu grafo de conhecimento</b> — conceitos como um mapa vivo do que assenta em quê.`,
+      st_f4: `<b>Revê</b> — rondas de recordação ativa focadas, na própria app.`,
+      st_note: `A revisão funciona nos dois lugares.`,
+      qs_eyebrow: `Início rápido`, qs_h2: `Três comandos até à tua primeira sessão.`,
+      qs_s1: `<b>Configura</b> — um assistente escolhe um espaço de trabalho, uma IA local e liga a skill.`,
+      qs_s2: `<b>Liga</b> o teu agente por MCP com <code>zam agent connect</code>.`,
+      qs_s3: `<b>Trabalha</b> — inicia uma tarefa real e escreve <code>/zam</code>. Trata do resto.`,
+      copy_btn: `Copiar`,
+      term_cmt1: `# configuração guiada`, term_ok1: `✓ espaço de trabalho · IA local · base de dados · skill /zam`,
+      term_cmt2: `# ou codex · copilot · goose …`, term_ok2: `✓ servidor MCP configurado`,
+      term_cmt3: `# abre o teu agente, inicia uma tarefa e depois:`,
+      how_eyebrow: `Como funciona`, how_h2: `Um vocabulário pequeno e honesto.`,
+      def_token: `Um conceito atómico que vale a pena lembrar, com um nível de Bloom (1 lembrar → 5 criar).`,
+      def_card: `O teu estado pessoal de repetição espaçada para um token, agendado pelo FSRS-5.`,
+      def_prereq: `Um grafo do que é preciso entender primeiro. A ZAM não pergunta um conceito cujas bases acabaram de te escapar.`,
+      def_session: `Cada episódio de trabalho e aprendizagem é registado, para que as avaliações venham de provas reais.`,
+      how_foot: `O motor de aprendizagem é um <b>núcleo agnóstico de IA</b> sem qualquer dependência de LLM — o teu agente apenas o conduz. Código aberto, Apache-2.0.`,
+      foot_tagline: `<span class="zam-note">Zam — bávaro para "juntos".</span> Um núcleo de aprendizagem simbiótico: quanto mais capaz a tua IA, mais capaz és tu.`,
+      foot_grp_project: `Projeto`, foot_project_source: `Código`, foot_project_usage: `Utilização`, foot_project_arch: `Arquitetura`,
+      foot_grp_start: `Começar`, foot_start_download: `Transferir`, foot_start_quickstart: `Início rápido`, foot_start_contribute: `Contribuir`
+    },
+    zh: {
+      nav_what: `功能`, nav_start: `开始使用`,
+      hero_eyebrow: `不只是自动化——<span class="spark">更要成长</span>`,
+      hero_h1: `用你的 AI 做真正的工作——把知识留下，而不是丢掉。`,
+      hero_lead: `ZAM 把你与智能体的日常工作变成主动回忆练习。任务完成了，<strong>而且</strong>你也更强了——自动化，但不依赖。`,
+      hero_cta1: `开始使用`, hero_cta2: `查看源码`,
+      what_eyebrow: `现在能做什么`,
+      what_h2: `一个随行的学习层——不是硬塞进你日程的记忆卡片应用。`,
+      cap1_h3: `在你的智能体中随行`,
+      cap1_p: `当你处理真实任务时，ZAM 把它拆成一个个小概念，看出哪些该复习，并织入这次会话。`,
+      cap2_h3: `只观察，不考你`,
+      cap2_p: `你自己把某一步做好，它就悄悄标记为已掌握。只有当无法从你的工作中判断时，ZAM 才会发问。<b>最好的一次会话，是你几乎察觉不到的那次。</b>`,
+      cap3_h3: `接住你正在遗忘的`,
+      cap3_p: `每个概念都用 FSRS-5 间隔重复、基于前置知识图谱来安排——正好在它要溜走之前再次出现。`,
+      cap4_h3: `留在你的机器上`,
+      cap4_p: `一个本地 SQLite 数据库，由智能体和桌面应用共享。复习可离线进行；支持本地 LLM。`,
+      places_eyebrow: `两处，一脑`,
+      places_h2: `你的智能体是工作台。Studio 负责设置、内容 &amp; 知识图谱。`,
+      places_sub: `两者共享同一个本地数据库，一处的进度会在另一处出现。`,
+      wb_tag: `在你的 AI 智能体里`, wb_h3: `工作台`,
+      wb_p: `真正的学习在这里发生：任务成为练习，ZAM 观察你的工作并一步步引导。一条命令通过 MCP 接入——然后只需输入 <code class="icode">/zam</code>。`,
+      wb_note: `观察和引导式任务都在这里、在你的智能体内进行。`,
+      st_h3: `设置、内容 &amp; 图谱`,
+      st_p: `一个原生应用，专做聊天窗口不擅长的事。`,
+      st_f1: `<b>更简单的配置</b>——在设置面板里选语言和本地 AI 模型，而不是改配置文件。`,
+      st_f2: `<b>导入你的材料</b>——粘贴笔记、指向某个来源，或走一遍课程；向导把它变成卡片。`,
+      st_f3: `<b>查看你的知识图谱</b>——概念是一张活的地图，显示什么建立在什么之上。`,
+      st_f4: `<b>复习</b>——专注的主动回忆轮次，就在应用里。`,
+      st_note: `两处都能复习。`,
+      qs_eyebrow: `快速开始`, qs_h2: `三条命令，开启第一次会话。`,
+      qs_s1: `<b>设置</b>——一个向导选好工作区、本地 AI，并接入技能。`,
+      qs_s2: `用 <code>zam agent connect</code> 通过 MCP <b>连接</b>你的智能体。`,
+      qs_s3: `<b>开始工作</b>——启动一个真实任务并输入 <code>/zam</code>，其余交给它。`,
+      copy_btn: `复制`,
+      term_cmt1: `# 引导式设置`, term_ok1: `✓ 工作区 · 本地 AI · 数据库 · /zam 技能`,
+      term_cmt2: `# 或 codex · copilot · goose …`, term_ok2: `✓ 已配置 MCP 服务器`,
+      term_cmt3: `# 打开你的智能体，开始一个任务，然后：`,
+      how_eyebrow: `工作原理`, how_h2: `一套小而诚实的术语。`,
+      def_token: `一个值得记住的原子概念，带有布鲁姆层级（1 记忆 → 5 创造）。`,
+      def_card: `你对某个 token 的个人间隔重复状态，由 FSRS-5 安排。`,
+      def_prereq: `一张“需要先理解什么”的图。ZAM 不会去考一个根基刚刚溜走的概念。`,
+      def_session: `每一次工作与学习都会被记录，所以评分来自真实证据。`,
+      how_foot: `学习引擎是一个<b>与 AI 无关的内核</b>，不依赖任何 LLM——你的智能体只是驱动它。开源，Apache-2.0。`,
+      foot_tagline: `<span class="zam-note">Zam——巴伐利亚语的“一起”。</span> 一个共生的学习内核：你的 AI 越强，你也越强。`,
+      foot_grp_project: `项目`, foot_project_source: `源码`, foot_project_usage: `使用`, foot_project_arch: `架构`,
+      foot_grp_start: `开始`, foot_start_download: `下载`, foot_start_quickstart: `快速开始`, foot_start_contribute: `参与贡献`
+    },
+    ja: {
+      nav_what: `できること`, nav_start: `はじめる`,
+      hero_eyebrow: `自動化するだけでなく——<span class="spark">伸びる</span>`,
+      hero_h1: `AI と本当の仕事をして——知識を失わずに、手元に残す。`,
+      hero_lead: `ZAM は、エージェントとの日々の仕事をアクティブ・リコールの練習に変えます。タスクは片づき、<strong>しかも</strong>あなたも鋭くなる——依存しない自動化。`,
+      hero_cta1: `はじめる`, hero_cta2: `ソースを見る`,
+      what_eyebrow: `今できること`,
+      what_h2: `寄り添う学習レイヤー——一日に貼り付けただけの暗記カードアプリではありません。`,
+      cap1_h3: `エージェントの中で寄り添う`,
+      cap1_p: `実際のタスクに取り組む間、ZAM はそれを小さな概念に分け、復習すべきものを見つけ、セッションに織り込みます。`,
+      cap2_h3: `問い詰めず、見守る`,
+      cap2_p: `自分でうまくできたステップは、そっと「習得済み」になります。ZAM は、あなたの作業から判断できないときだけ尋ねます。<b>最良のセッションは、ほとんど気づかないセッションです。</b>`,
+      cap3_h3: `忘れかけを拾い上げる`,
+      cap3_p: `どの概念も、前提知識グラフの上で FSRS-5 の間隔反復により予定されます——こぼれ落ちる直前に、もう一度現れます。`,
+      cap4_h3: `あなたのマシンに留まる`,
+      cap4_p: `ローカルの SQLite データベース一つを、エージェントとデスクトップアプリで共有。復習はオフラインでも動作し、ローカル LLM にも対応します。`,
+      places_eyebrow: `二つの場所、一つの頭脳`,
+      places_h2: `エージェントは作業台。Studio は設定・コンテンツ &amp; グラフのために。`,
+      places_sub: `どちらも同じローカルデータベースを共有するので、一方の進捗がもう一方に現れます。`,
+      wb_tag: `あなたの AI エージェント内`, wb_h3: `作業台`,
+      wb_p: `本当の学習が起きる場所：タスクが練習になり、ZAM があなたの作業を見守り、一歩ずつ導きます。一つのコマンドで MCP 経由でつながり——あとは <code class="icode">/zam</code> と入力するだけ。`,
+      wb_note: `観察とガイド付きのタスクは、ここ、あなたのエージェントの中で行われます。`,
+      st_h3: `設定・コンテンツ &amp; グラフ`,
+      st_p: `チャット画面が苦手なことのための、ネイティブアプリ。`,
+      st_f1: `<b>より簡単な設定</b>——言語とローカル AI モデルを、設定ファイルではなく設定画面で。`,
+      st_f2: `<b>教材を取り込む</b>——メモを貼る、ソースを指定する、カリキュラムをたどる；ウィザードがカードに変えます。`,
+      st_f3: `<b>知識グラフを見る</b>——何が何の上に築かれるかを示す、生きた地図としての概念。`,
+      st_f4: `<b>復習</b>——集中したアクティブ・リコールを、そのままアプリ内で。`,
+      st_note: `復習はどちらの場所でもできます。`,
+      qs_eyebrow: `クイックスタート`, qs_h2: `最初のセッションまで、三つのコマンド。`,
+      qs_s1: `<b>セットアップ</b>——ウィザードがワークスペースとローカル AI を選び、スキルをつなぎます。`,
+      qs_s2: `<code>zam agent connect</code> で、エージェントを MCP 経由で<b>接続</b>。`,
+      qs_s3: `<b>作業する</b>——実際のタスクを始めて <code>/zam</code> と入力。あとはお任せ。`,
+      copy_btn: `コピー`,
+      term_cmt1: `# ガイド付きセットアップ`, term_ok1: `✓ ワークスペース · ローカル AI · データベース · /zam スキル`,
+      term_cmt2: `# または codex · copilot · goose …`, term_ok2: `✓ MCP サーバー設定済み`,
+      term_cmt3: `# エージェントを開き、タスクを始めて、それから：`,
+      how_eyebrow: `しくみ`, how_h2: `小さくて正直な語彙。`,
+      def_token: `覚える価値のある原子的な概念。ブルームのレベル（1 記憶 → 5 創造）が付きます。`,
+      def_card: `ある token に対するあなた個人の間隔反復の状態。FSRS-5 が予定します。`,
+      def_prereq: `先に理解すべきことのグラフ。ZAM は、土台がちょうど抜け落ちた概念は出題しません。`,
+      def_session: `作業と学習のすべてのエピソードが記録されるので、評価は本物の証拠に基づきます。`,
+      how_foot: `学習エンジンは、LLM に一切依存しない <b>AI 非依存のカーネル</b>——エージェントはそれを動かすだけ。オープンソース、Apache-2.0。`,
+      foot_tagline: `<span class="zam-note">Zam——バイエルン語で「一緒に」。</span> 共生する学習カーネル：あなたの AI が有能になるほど、あなたも有能になる。`,
+      foot_grp_project: `プロジェクト`, foot_project_source: `ソース`, foot_project_usage: `使い方`, foot_project_arch: `アーキテクチャ`,
+      foot_grp_start: `スタート`, foot_start_download: `ダウンロード`, foot_start_quickstart: `クイックスタート`, foot_start_contribute: `貢献する`
+    }
+  };
+
+  var nodes = document.querySelectorAll("[data-i18n]");
+  nodes.forEach(function (n) { n.setAttribute("data-en", n.innerHTML); });
+
+  function apply(lang) {
+    document.documentElement.lang = lang;
+    var pack = T[lang];
+    nodes.forEach(function (n) {
+      var k = n.getAttribute("data-i18n");
+      if (lang === "en") { n.innerHTML = n.getAttribute("data-en"); }
+      else { n.innerHTML = (pack && pack[k] != null) ? pack[k] : n.getAttribute("data-en"); }
+    });
+    if (TITLES[lang]) document.title = TITLES[lang];
+    try { localStorage.setItem("zam_lang", lang); } catch (e) {}
+    var s = document.getElementById("langSel");
+    if (s) s.value = lang;
+  }
+
+  function pick() {
+    var saved = null;
+    try { saved = localStorage.getItem("zam_lang"); } catch (e) {}
+    if (saved && LOCALES.indexOf(saved) >= 0) return saved;
+    var nav = (navigator.language || "en").slice(0, 2).toLowerCase();
+    return LOCALES.indexOf(nav) >= 0 ? nav : "en";
+  }
+
+  var sel = document.getElementById("langSel");
+  if (sel) sel.addEventListener("change", function () { apply(sel.value); });
+  apply(pick());
+})();
+
+/* ---------- Copy quickstart ---------- */
+(function () {
+  var btn = document.getElementById("copyBtn");
+  if (!btn) return;
+  btn.addEventListener("click", function () {
+    var cmds = "zam init\nzam agent connect claude-code\n# then type /zam in your agent";
+    var label = btn.getAttribute("data-en") || "Copy";
+    var done = function () { btn.textContent = "✓"; setTimeout(function () { btn.textContent = label; }, 1600); };
+    if (navigator.clipboard) { navigator.clipboard.writeText(cmds).then(done, done); } else { done(); }
+  });
+})();
+
+/* ---------- Scroll reveal ---------- */
 (function () {
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+  document.body.classList.add("reveal-on");
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.14 });
+  document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+})();
 
-  /* ---- Scroll reveal ---- */
-  if (!reduce && "IntersectionObserver" in window) {
-    document.body.classList.add("reveal-on");
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
-    }, { threshold: 0.14 });
-    document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
-  }
-
-  /* ---- Copy quickstart ---- */
-  var btn = document.getElementById("copyBtn");
-  if (btn) {
-    btn.addEventListener("click", function () {
-      var cmds = "zam init\nzam agent connect claude-code\n# then type /zam in your agent";
-      var done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy"; }, 1600); };
-      if (navigator.clipboard) { navigator.clipboard.writeText(cmds).then(done, done); } else { done(); }
-    });
-  }
-
-  /* ---- Ambient knowledge graph ---- */
+/* ---------- Ambient knowledge graph ---------- */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var canvas = document.getElementById("graph");
   if (!canvas) return;
   var ctx = canvas.getContext("2d");
@@ -444,8 +794,7 @@
     for (var i = 0; i < count; i++) {
       var agent = Math.random() > 0.5;
       nodes.push({
-        x: Math.random() * W, y: Math.random() * H,
-        r: 1.6 + Math.random() * 2.4,
+        x: Math.random() * W, y: Math.random() * H, r: 1.6 + Math.random() * 2.4,
         ph: Math.random() * Math.PI * 2, sp: 0.0006 + Math.random() * 0.0009,
         ax: 8 + Math.random() * 22, ay: 8 + Math.random() * 22,
         bx: 0, by: 0, agent: agent, pulse: 0, next: 1500 + Math.random() * 6000
@@ -460,12 +809,9 @@
       }
     }
   }
-
   function hex(agent, alpha) { return agent ? "rgba(69,223,208," + alpha + ")" : "rgba(138,123,243," + alpha + ")"; }
-
-  function frame(dt) {
-    t += 16;
-    ctx.clearRect(0, 0, W, H);
+  function frame() {
+    t += 16; ctx.clearRect(0, 0, W, H);
     var i, n;
     for (i = 0; i < nodes.length; i++) {
       n = nodes[i];
@@ -488,19 +834,14 @@
     for (i = 0; i < nodes.length; i++) {
       n = nodes[i];
       if (n.pulse > 0) {
-        ctx.beginPath();
-        ctx.arc(n.x, n.y, n.r + n.pulse * 13, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(242,200,121," + (n.pulse * 0.16) + ")";
-        ctx.fill();
+        ctx.beginPath(); ctx.arc(n.x, n.y, n.r + n.pulse * 13, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(242,200,121," + (n.pulse * 0.16) + ")"; ctx.fill();
       }
       ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-      ctx.fillStyle = n.pulse > 0.35 ? "rgba(242,200,121,0.95)" : hex(n.agent, 0.9);
-      ctx.fill();
+      ctx.fillStyle = n.pulse > 0.35 ? "rgba(242,200,121,0.95)" : hex(n.agent, 0.9); ctx.fill();
     }
     raf = requestAnimationFrame(frame);
   }
-
-  function start() { build(); if (reduce) { drawStatic(); } else { if (raf) cancelAnimationFrame(raf); raf = requestAnimationFrame(frame); } }
   function drawStatic() {
     ctx.clearRect(0, 0, W, H);
     for (var i = 0; i < edges.length; i++) {
@@ -510,7 +851,7 @@
     }
     for (var k = 0; k < nodes.length; k++) { var n = nodes[k]; ctx.beginPath(); ctx.arc(n.bx, n.by, n.r, 0, Math.PI * 2); ctx.fillStyle = hex(n.agent, 0.85); ctx.fill(); }
   }
-
+  function start() { build(); if (reduce) { drawStatic(); } else { if (raf) cancelAnimationFrame(raf); raf = requestAnimationFrame(frame); } }
   var to = null;
   window.addEventListener("resize", function () { clearTimeout(to); to = setTimeout(start, 200); });
   start();
