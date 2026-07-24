@@ -329,6 +329,7 @@
               <span class="chip"><span class="dot"></span>OpenCode</span>
               <span class="chip"><span class="dot"></span>GitHub Copilot</span>
               <span class="chip"><span class="dot"></span>Goose</span>
+              <span class="chip"><span class="dot"></span>Hermes</span>
             </div>
             <p class="note" data-i18n="wb_note">Observation and guided task-work happen here, inside your agent.</p>
           </div>
@@ -354,13 +355,13 @@
         <div class="qs-layout">
           <div class="qs-copy reveal">
             <p class="eyebrow" data-i18n="qs_eyebrow">Quickstart</p>
-            <h2 data-i18n="qs_h2">One line to install. Three commands to your first session.</h2>
+            <h2 data-i18n="qs_h2">One line to install. The app guides you from there.</h2>
             <ol class="qs-steps">
-              <li><span data-i18n="qs_s0"><b>Install</b> — one command grabs the right build for your OS and puts <code>zam</code> on your PATH. No browser security prompts.</span></li>
-              <li><span data-i18n="qs_s1"><b>Set up</b> — one guided wizard picks a workspace, a local AI runner, and wires the skill.</span></li>
-              <li><span data-i18n="qs_s2"><b>Connect</b> your agent over MCP with <code>zam agent connect</code>.</span></li>
+              <li><span data-i18n="qs_s0"><b>Install</b> — one command puts the desktop app and the <code>zam</code> CLI on your machine. No browser security prompts.</span></li>
+              <li><span data-i18n="qs_s1"><b>Open ZAM</b> — a guided first run sets up who you're learning as, your AI model, your agent, and your first learning content. Skip anything; the dashboard keeps the remaining steps as a checklist.</span></li>
               <li><span data-i18n="qs_s3"><b>Work</b> — start a real task and type <code>/zam</code>. It handles the rest.</span></li>
             </ol>
+            <p class="note" data-i18n="qs_alt">Prefer a terminal? The same setup runs as commands — <code>zam init</code> is the guided first run, CLI-style.</p>
           </div>
           <div class="term reveal" role="figure" aria-label="ZAM quickstart commands">
             <div class="term-bar">
@@ -466,11 +467,11 @@
       st_f3: `<b>Deinen Wissensgraphen sehen</b> — Konzepte als lebendige Karte dessen, was worauf aufbaut.`,
       st_f4: `<b>Wiederholen</b> — fokussierte Active-Recall-Runden, direkt in der App.`,
       st_note: `Wiederholen geht an beiden Orten.`,
-      qs_eyebrow: `Schnellstart`, qs_h2: `Eine Zeile zum Installieren. Drei Befehle bis zur ersten Sitzung.`,
-      qs_s0: `<b>Installieren</b> — ein Befehl holt die passende Version für dein Betriebssystem und legt <code>zam</code> in deinen PATH. Keine Sicherheitswarnungen des Browsers.`,
-      qs_s1: `<b>Einrichten</b> — ein geführter Assistent wählt einen Arbeitsbereich, eine lokale KI und bindet die Skill ein.`,
-      qs_s2: `<b>Verbinde</b> deinen Agenten über MCP mit <code>zam agent connect</code>.`,
+      qs_eyebrow: `Schnellstart`, qs_h2: `Eine Zeile zum Installieren. Ab da führt dich die App.`,
+      qs_s0: `<b>Installieren</b> — ein Befehl legt Desktop-App und <code>zam</code>-CLI auf deinen Rechner. Keine Sicherheitswarnungen des Browsers.`,
+      qs_s1: `<b>ZAM öffnen</b> — ein geführter erster Start richtet ein, als wer du lernst, dein KI-Modell, deinen Agenten und deinen ersten Lernstoff. Überspring, was du willst; das Dashboard führt die restlichen Schritte als Liste.`,
       qs_s3: `<b>Arbeite</b> — starte eine echte Aufgabe und tippe <code>/zam</code>. Den Rest übernimmt es.`,
+      qs_alt: `Lieber im Terminal? Dieselbe Einrichtung gibt es als Befehle — <code>zam init</code> ist der geführte erste Start im CLI-Gewand.`,
       copy_btn: `Kopieren`,
       term_ok0: `✓ Desktop-App + zam-CLI · keine Sicherheitswarnungen`,
       term_cmt1: `# geführte Einrichtung`, term_ok1: `✓ Arbeitsbereich · lokale KI · Datenbank · /zam-Skill`,
@@ -515,11 +516,11 @@
       st_f3: `<b>Mira tu grafo de conocimiento</b> — los conceptos como un mapa vivo de lo que se apoya en qué.`,
       st_f4: `<b>Repasa</b> — rondas de recuerdo activo enfocadas, en la propia app.`,
       st_note: `El repaso funciona en ambos lugares.`,
-      qs_eyebrow: `Inicio rápido`, qs_h2: `Una línea para instalar. Tres comandos hasta tu primera sesión.`,
-      qs_s0: `<b>Instala</b> — un comando obtiene la versión correcta para tu sistema y añade <code>zam</code> a tu PATH. Sin advertencias de seguridad del navegador.`,
-      qs_s1: `<b>Configura</b> — un asistente elige un espacio de trabajo, una IA local y conecta la skill.`,
-      qs_s2: `<b>Conecta</b> tu agente por MCP con <code>zam agent connect</code>.`,
+      qs_eyebrow: `Inicio rápido`, qs_h2: `Una línea para instalar. Desde ahí te guía la app.`,
+      qs_s0: `<b>Instala</b> — un comando pone la app de escritorio y la CLI <code>zam</code> en tu máquina. Sin advertencias de seguridad del navegador.`,
+      qs_s1: `<b>Abre ZAM</b> — un primer arranque guiado configura como quién aprendes, tu modelo de IA, tu agente y tu primer contenido de aprendizaje. Sáltate lo que quieras; el panel guarda los pasos restantes como lista.`,
       qs_s3: `<b>Trabaja</b> — empieza una tarea real y escribe <code>/zam</code>. Se encarga del resto.`,
+      qs_alt: `¿Prefieres la terminal? La misma configuración existe como comandos — <code>zam init</code> es el primer arranque guiado, en versión CLI.`,
       copy_btn: `Copiar`,
       term_ok0: `✓ app de escritorio + CLI zam · sin advertencias de seguridad`,
       term_cmt1: `# configuración guiada`, term_ok1: `✓ espacio de trabajo · IA local · base de datos · skill /zam`,
@@ -564,11 +565,11 @@
       st_f3: `<b>Vois ton graphe de connaissances</b> — les concepts en carte vivante de ce qui repose sur quoi.`,
       st_f4: `<b>Révise</b> — des séries de rappel actif ciblées, directement dans l'appli.`,
       st_note: `La révision marche aux deux endroits.`,
-      qs_eyebrow: `Démarrage rapide`, qs_h2: `Une ligne pour installer. Trois commandes jusqu'à ta première session.`,
-      qs_s0: `<b>Installe</b> — une commande récupère la bonne version pour ton OS et ajoute <code>zam</code> à ton PATH. Aucune alerte de sécurité du navigateur.`,
-      qs_s1: `<b>Configure</b> — un assistant choisit un espace de travail, une IA locale et branche la skill.`,
-      qs_s2: `<b>Connecte</b> ton agent via MCP avec <code>zam agent connect</code>.`,
+      qs_eyebrow: `Démarrage rapide`, qs_h2: `Une ligne pour installer. Ensuite, l'app te guide.`,
+      qs_s0: `<b>Installe</b> — une commande met l'app de bureau et la CLI <code>zam</code> sur ta machine. Aucune alerte de sécurité du navigateur.`,
+      qs_s1: `<b>Ouvre ZAM</b> — un premier démarrage guidé configure qui tu es en tant qu'apprenant, ton modèle d'IA, ton agent et ton premier contenu d'apprentissage. Passe ce que tu veux ; le tableau de bord garde les étapes restantes en liste.`,
       qs_s3: `<b>Travaille</b> — lance une vraie tâche et tape <code>/zam</code>. Il gère le reste.`,
+      qs_alt: `Tu préfères le terminal ? La même configuration existe en commandes — <code>zam init</code> est le premier démarrage guidé, version CLI.`,
       copy_btn: `Copier`,
       term_ok0: `✓ app de bureau + CLI zam · aucune alerte de sécurité`,
       term_cmt1: `# configuration guidée`, term_ok1: `✓ espace de travail · IA locale · base de données · skill /zam`,
@@ -613,11 +614,11 @@
       st_f3: `<b>Vê o teu grafo de conhecimento</b> — conceitos como um mapa vivo do que assenta em quê.`,
       st_f4: `<b>Revê</b> — rondas de recordação ativa focadas, na própria app.`,
       st_note: `A revisão funciona nos dois lugares.`,
-      qs_eyebrow: `Início rápido`, qs_h2: `Uma linha para instalar. Três comandos até à tua primeira sessão.`,
-      qs_s0: `<b>Instala</b> — um comando obtém a versão certa para o teu sistema e coloca <code>zam</code> no teu PATH. Sem avisos de segurança do navegador.`,
-      qs_s1: `<b>Configura</b> — um assistente escolhe um espaço de trabalho, uma IA local e liga a skill.`,
-      qs_s2: `<b>Liga</b> o teu agente por MCP com <code>zam agent connect</code>.`,
+      qs_eyebrow: `Início rápido`, qs_h2: `Uma linha para instalar. A partir daí, a app guia-te.`,
+      qs_s0: `<b>Instala</b> — um comando põe a app de desktop e a CLI <code>zam</code> na tua máquina. Sem avisos de segurança do navegador.`,
+      qs_s1: `<b>Abre o ZAM</b> — um primeiro arranque guiado configura como quem aprendes, o teu modelo de IA, o teu agente e o teu primeiro conteúdo de aprendizagem. Salta o que quiseres; o painel guarda os passos restantes numa lista.`,
       qs_s3: `<b>Trabalha</b> — inicia uma tarefa real e escreve <code>/zam</code>. Trata do resto.`,
+      qs_alt: `Preferes o terminal? A mesma configuração existe como comandos — <code>zam init</code> é o primeiro arranque guiado, em versão CLI.`,
       copy_btn: `Copiar`,
       term_ok0: `✓ app de ambiente de trabalho + CLI zam · sem avisos de segurança`,
       term_cmt1: `# configuração guiada`, term_ok1: `✓ espaço de trabalho · IA local · base de dados · skill /zam`,
@@ -662,11 +663,11 @@
       st_f3: `<b>查看你的知识图谱</b>——概念是一张活的地图，显示什么建立在什么之上。`,
       st_f4: `<b>复习</b>——专注的主动回忆轮次，就在应用里。`,
       st_note: `两处都能复习。`,
-      qs_eyebrow: `快速开始`, qs_h2: `一行命令完成安装。三条命令，开启第一次会话。`,
-      qs_s0: `<b>安装</b>——一条命令获取适合你系统的版本，并将 <code>zam</code> 加入 PATH。没有浏览器安全提示。`,
-      qs_s1: `<b>设置</b>——一个向导选好工作区、本地 AI，并接入技能。`,
-      qs_s2: `用 <code>zam agent connect</code> 通过 MCP <b>连接</b>你的智能体。`,
+      qs_eyebrow: `快速开始`, qs_h2: `一行命令完成安装。之后由应用引导你。`,
+      qs_s0: `<b>安装</b>——一条命令即可把桌面应用和 <code>zam</code> CLI 装到你的机器上。没有浏览器安全提示。`,
+      qs_s1: `<b>打开 ZAM</b>——引导式首次启动会设置你的学习身份、AI 模型、智能体和第一批学习内容。想跳过就跳过；仪表盘会把剩余步骤列成清单。`,
       qs_s3: `<b>开始工作</b>——启动一个真实任务并输入 <code>/zam</code>，其余交给它。`,
+      qs_alt: `更喜欢终端？同样的设置也有命令版——<code>zam init</code> 就是 CLI 形式的引导式首次启动。`,
       copy_btn: `复制`,
       term_ok0: `✓ 桌面应用 + zam 命令行 · 无安全提示`,
       term_cmt1: `# 引导式设置`, term_ok1: `✓ 工作区 · 本地 AI · 数据库 · /zam 技能`,
@@ -711,11 +712,11 @@
       st_f3: `<b>知識グラフを見る</b>——何が何の上に築かれるかを示す、生きた地図としての概念。`,
       st_f4: `<b>復習</b>——集中したアクティブ・リコールを、そのままアプリ内で。`,
       st_note: `復習はどちらの場所でもできます。`,
-      qs_eyebrow: `クイックスタート`, qs_h2: `インストールは一行。最初のセッションまで、三つのコマンド。`,
-      qs_s0: `<b>インストール</b>——一つのコマンドで OS に合ったビルドを取得し、<code>zam</code> を PATH に追加。ブラウザのセキュリティ警告なし。`,
-      qs_s1: `<b>セットアップ</b>——ウィザードがワークスペースとローカル AI を選び、スキルをつなぎます。`,
-      qs_s2: `<code>zam agent connect</code> で、エージェントを MCP 経由で<b>接続</b>。`,
+      qs_eyebrow: `クイックスタート`, qs_h2: `インストールは一行。あとはアプリが案内します。`,
+      qs_s0: `<b>インストール</b>——コマンド一つでデスクトップアプリと <code>zam</code> CLI がマシンに入ります。ブラウザのセキュリティ警告なし。`,
+      qs_s1: `<b>ZAM を開く</b>——ガイド付きの初回起動で、学ぶ立場・AI モデル・エージェント・最初の学習コンテンツを設定。スキップも自由——残りの手順はダッシュボードがチェックリストで保持します。`,
       qs_s3: `<b>作業する</b>——実際のタスクを始めて <code>/zam</code> と入力。あとはお任せ。`,
+      qs_alt: `ターミナル派？同じセットアップはコマンドでも——<code>zam init</code> が CLI 版のガイド付き初回セットアップです。`,
       copy_btn: `コピー`,
       term_ok0: `✓ デスクトップアプリ + zam CLI · セキュリティ警告なし`,
       term_cmt1: `# ガイド付きセットアップ`, term_ok1: `✓ ワークスペース · ローカル AI · データベース · /zam スキル`,
