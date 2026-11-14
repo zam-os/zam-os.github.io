@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ZAM — keep the knowledge</title>
-<meta name="description" content="Do real work with your AI — and keep the knowledge instead of losing it. ZAM turns everyday work with your AI agent into active-recall practice, so automation doesn't mean dependence.">
+<title>ZAM — Learn freely on Desktop &amp; Mobile, keep what you learn</title>
+<meta name="description" content="Install ZAM Desktop or Mobile, import courses or decks for free, and keep what you learn offline with FSRS-6 spaced repetition. Optional AI feedback and Agentic Coding (Alpha) unlock when you want them.">
 <link rel="canonical" href="https://zam-os.org/">
 <meta name="theme-color" content="#090a12">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zam-os.org/">
-<meta property="og:title" content="ZAM — keep the knowledge">
-<meta property="og:description" content="A symbiotic learning layer for your AI agent: do the real work, and keep the knowledge instead of losing it.">
+<meta property="og:title" content="ZAM — Learn freely, keep what you learn">
+<meta property="og:description" content="Install ZAM Desktop or Mobile, import free courses or Anki decks, and learn offline with FSRS-6. Optional AI mode and Agentic Coding (Alpha).">
 <meta property="og:site_name" content="ZAM">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZAM — keep the knowledge">
-<meta name="twitter:description" content="A symbiotic learning layer for your AI agent: do the real work, and keep the knowledge instead of losing it.">
+<meta name="twitter:title" content="ZAM — Learn freely, keep what you learn">
+<meta name="twitter:description" content="Free offline spaced-repetition studio for Desktop and Mobile, with optional AI and Agentic Coding (Alpha).">
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/favicon.png">
 </head>
@@ -71,6 +71,12 @@
   .eyebrow { font-size: 0.76rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
   .eyebrow .spark { color: var(--amber); }
   .icode { font-family: var(--font-mono); font-size: 0.85em; color: var(--violet-bright); }
+  .alpha-pill {
+    display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; padding: 2px 9px; border-radius: 999px;
+    border: 1px solid rgba(242, 200, 121, 0.55); color: var(--amber);
+    background: rgba(242, 200, 121, 0.1); vertical-align: middle; margin-left: 6px;
+  }
 
   :focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 4px; }
 
@@ -102,7 +108,7 @@
   }
   .lang select:hover { border-color: var(--violet); }
   .lang select option { background: #12142a; color: var(--text); }
-  @media (max-width: 640px) { .nav-links .hide-sm { display: none; } .lang .globe { display: none; } }
+  @media (max-width: 720px) { .nav-links .hide-sm { display: none; } .lang .globe { display: none; } }
 
   /* ---------- Hero ---------- */
   .hero { position: relative; overflow: hidden; padding: clamp(72px, 13vw, 150px) 0 clamp(60px, 9vw, 110px); }
@@ -114,12 +120,12 @@
       radial-gradient(90% 80% at 8% 92%, rgba(138,123,243,0.12), transparent 50%),
       linear-gradient(to right, var(--ink) 8%, rgba(9,10,18,0.35) 55%, rgba(9,10,18,0.65) 100%);
   }
-  .hero-content { position: relative; z-index: 2; max-width: 720px; }
-  .hero h1 { font-size: clamp(2.5rem, 6vw, 4.6rem); line-height: 1.02; font-weight: 600; margin: 20px 0 0; }
+  .hero-content { position: relative; z-index: 2; max-width: 740px; }
+  .hero h1 { font-size: clamp(2.4rem, 5.8vw, 4.4rem); line-height: 1.03; font-weight: 600; margin: 20px 0 0; }
   .hero h1 .warm { color: var(--amber); }
-  .hero .lead { margin-top: 24px; font-size: clamp(1.06rem, 1.7vw, 1.28rem); color: var(--muted); max-width: 60ch; }
+  .hero .lead { margin-top: 24px; font-size: clamp(1.06rem, 1.7vw, 1.25rem); color: var(--muted); max-width: 62ch; }
   .hero .lead strong { color: var(--text); font-weight: 600; }
-  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
 
   .btn {
     display: inline-flex; align-items: center; gap: 9px; font-family: var(--font-display);
@@ -132,10 +138,11 @@
   .btn-ghost:hover { border-color: var(--violet); background: rgba(138,123,243,0.10); transform: translateY(-2px); }
 
   /* ---------- Section scaffolding ---------- */
-  .section { padding: clamp(64px, 10vw, 120px) 0; border-top: 1px solid var(--line); }
-  .section-head { max-width: 680px; margin-bottom: clamp(36px, 5vw, 56px); }
-  .section-head h2 { font-size: clamp(1.7rem, 3.6vw, 2.6rem); margin-top: 14px; line-height: 1.08; }
-  .section-head p { margin-top: 16px; color: var(--muted); font-size: 1.08rem; }
+  .section { padding: clamp(64px, 10vw, 116px) 0; border-top: 1px solid var(--line); }
+  .section-head { max-width: 720px; margin-bottom: clamp(34px, 5vw, 54px); }
+  .section-head h2 { font-size: clamp(1.7rem, 3.6vw, 2.55rem); margin-top: 14px; line-height: 1.08; }
+  .section-head p { margin-top: 16px; color: var(--muted); font-size: 1.06rem; }
+  .section-head p b { color: var(--text); }
 
   /* ---------- Capabilities ---------- */
   .cap-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
@@ -147,31 +154,52 @@
   .cap p { color: var(--muted); font-size: 0.99rem; }
   .cap p b { color: var(--text); font-weight: 600; }
 
-  /* ---------- Two places ---------- */
+  /* ---------- Split cards (App install + Free learning) ---------- */
   .split { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
   @media (max-width: 820px) { .split { grid-template-columns: 1fr; } }
   .place {
     position: relative; border: 1px solid var(--line-strong); border-radius: var(--r);
-    padding: clamp(26px, 3.5vw, 40px); background: var(--panel);
+    padding: clamp(26px, 3.5vw, 38px); background: var(--panel);
     backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); overflow: hidden;
   }
   .place::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; }
-  .place.workbench::before { background: linear-gradient(90deg, var(--violet), transparent); }
   .place.studio::before { background: linear-gradient(90deg, var(--cyan), transparent); }
+  .place.workbench::before { background: linear-gradient(90deg, var(--violet), transparent); }
   .place .tag { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dim); }
-  .place h3 { font-size: 1.5rem; margin: 10px 0 4px; }
+  .place h3 { font-size: 1.46rem; margin: 10px 0 4px; }
   .place > p { color: var(--muted); margin-top: 8px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
   .chip { font-size: 0.85rem; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line-strong); color: var(--text); background: rgba(255,255,255,0.02); }
   .chip .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--violet); margin-right: 7px; vertical-align: middle; }
   .feat-list { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-direction: column; gap: 12px; }
-  .feat-list li { display: flex; gap: 11px; align-items: flex-start; color: var(--muted); font-size: 0.98rem; }
+  .feat-list li { display: flex; gap: 11px; align-items: flex-start; color: var(--muted); font-size: 0.97rem; }
   .feat-list li b { color: var(--text); font-weight: 600; }
+  .feat-list code { font-family: var(--font-mono); font-size: 0.85em; color: var(--cyan-bright); background: rgba(69,223,208,0.08); padding: 1px 6px; border-radius: 5px; }
   .feat-list .tick { flex: none; width: 18px; height: 18px; margin-top: 3px; color: var(--cyan); }
   .place .note { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--dim); }
+  .place .note a { color: var(--cyan-bright); font-weight: 600; }
+  .place .note a:hover { text-decoration: underline; }
 
-  /* ---------- Quickstart terminal ---------- */
-  .qs-layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(24px, 4vw, 48px); align-items: center; }
+  /* ---------- Three modes cascade ---------- */
+  .mode-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 900px) { .mode-grid { grid-template-columns: 1fr; } }
+  .mode-card {
+    position: relative; border: 1px solid var(--line-strong); border-radius: var(--r);
+    padding: 28px; background: var(--panel); display: flex; flex-direction: column; gap: 12px;
+    overflow: hidden;
+  }
+  .mode-card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; }
+  .mode-card.free::before { background: var(--cyan); }
+  .mode-card.ai::before { background: var(--violet-bright); }
+  .mode-card.agentic::before { background: var(--amber); }
+  .mode-card .tag { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .mode-card h3 { font-size: 1.32rem; }
+  .mode-card p { color: var(--muted); font-size: 0.96rem; }
+  .mode-card b { color: var(--text); }
+  .mode-card code { font-family: var(--font-mono); font-size: 0.86em; color: var(--violet-bright); background: rgba(138,123,243,0.1); padding: 1px 6px; border-radius: 5px; }
+
+  /* ---------- Agentic Coding setup path ---------- */
+  .qs-layout { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: clamp(24px, 4vw, 48px); align-items: start; }
   @media (max-width: 820px) { .qs-layout { grid-template-columns: 1fr; } }
   .term { border-radius: 14px; border: 1px solid var(--line-strong); background: #0b0d17; overflow: hidden; box-shadow: 0 40px 80px -40px rgba(0,0,0,0.8); }
   .term-bar { display: flex; align-items: center; gap: 8px; padding: 13px 16px; border-bottom: 1px solid var(--line); background: rgba(255,255,255,0.015); }
@@ -179,19 +207,23 @@
   .term-bar .t { margin-left: 10px; font-family: var(--font-mono); font-size: 0.76rem; color: var(--dim); }
   .term-bar .copy { margin-left: auto; font-family: var(--font-body); font-size: 0.78rem; color: var(--muted); background: transparent; border: 1px solid var(--line-strong); border-radius: 8px; padding: 5px 11px; cursor: pointer; transition: all 0.2s; }
   .term-bar .copy:hover { color: var(--text); border-color: var(--cyan); }
-  .term-body { padding: 22px clamp(18px, 3vw, 26px); font-family: var(--font-mono); font-size: 0.92rem; line-height: 1.9; overflow-x: auto; }
+  .term-body { padding: 22px clamp(18px, 3vw, 26px); font-family: var(--font-mono); font-size: 0.9rem; line-height: 1.85; overflow-x: auto; }
   .term-body .line { white-space: pre; }
   .term-body .prompt { color: var(--violet); }
   .term-body .cmd { color: var(--text); }
   .term-body .cmt { color: var(--dim); }
   .term-body .out { color: var(--cyan); }
-  .qs-copy h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.1; }
-  .qs-copy p { color: var(--muted); margin-top: 16px; }
-  .qs-steps { list-style: none; counter-reset: s; padding: 0; margin: 24px 0 0; display: flex; flex-direction: column; gap: 14px; }
-  .qs-steps li { counter-increment: s; display: flex; gap: 14px; align-items: baseline; color: var(--muted); }
-  .qs-steps li::before { content: counter(s); font-family: var(--font-mono); font-size: 0.8rem; color: var(--cyan); border: 1px solid var(--line-strong); border-radius: 7px; width: 26px; height: 26px; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+  .qs-steps { list-style: none; counter-reset: s; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px; }
+  .qs-steps li { counter-increment: s; display: flex; gap: 14px; align-items: baseline; color: var(--muted); font-size: 0.98rem; }
+  .qs-steps li::before { content: counter(s); font-family: var(--font-mono); font-size: 0.8rem; color: var(--amber); border: 1px solid var(--line-strong); border-radius: 7px; width: 26px; height: 26px; display: inline-flex; align-items: center; justify-content: center; flex: none; }
   .qs-steps li b { color: var(--text); font-weight: 600; }
   .qs-steps code { font-family: var(--font-mono); font-size: 0.86em; color: var(--violet-bright); background: rgba(138,123,243,0.1); padding: 1px 6px; border-radius: 5px; }
+  .alpha-callout {
+    margin-top: 22px; padding: 16px 18px; border-radius: 12px;
+    border: 1px solid rgba(242, 200, 121, 0.35); background: rgba(242, 200, 121, 0.06);
+    color: var(--muted); font-size: 0.94rem;
+  }
+  .alpha-callout b { color: var(--amber); }
 
   /* ---------- How it works ---------- */
   .how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
@@ -235,8 +267,9 @@
         ZAM <small>Zusammen</small>
       </a>
       <nav class="nav-links">
-        <a class="hide-sm" href="#what" data-i18n="nav_what">What it does</a>
-        <a class="hide-sm" href="#start" data-i18n="nav_start">Get started</a>
+        <a class="hide-sm" href="#install" data-i18n="nav_install">Install &amp; Free</a>
+        <a class="hide-sm" href="#modes" data-i18n="nav_modes">Modes</a>
+        <a class="hide-sm" href="#agentic" data-i18n="nav_agentic">Agentic Alpha</a>
         <span class="lang">
           <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>
           <select id="langSel" aria-label="Language">
@@ -264,112 +297,151 @@
       <div class="hero-veil"></div>
       <div class="wrap">
         <div class="hero-content">
-          <p class="eyebrow" data-i18n="hero_eyebrow">Don't just automate — <span class="spark">elevate</span></p>
-          <h1 data-i18n="hero_h1">Do real work with your AI — and&nbsp;keep the knowledge instead of losing&nbsp;it.</h1>
-          <p class="lead" data-i18n="hero_lead">ZAM turns everyday work with your agent into active-recall practice. The task gets done <strong>and</strong> you get sharper — automation without the dependence.</p>
+          <p class="eyebrow" data-i18n="hero_eyebrow">Desktop &amp; Mobile · <span class="spark">Free offline first</span></p>
+          <h1 data-i18n="hero_h1">Learn deliberately — and&nbsp;<span class="warm">keep</span> what matters.</h1>
+          <p class="lead" data-i18n="hero_lead">Install the ZAM Desktop or Mobile app, import curated courses or your own decks for free, and practice offline with FSRS-6 spaced repetition. No AI keys, no cloud lock-in, no terminal — until you want them.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#start"><span data-i18n="hero_cta1">Get started</span>
+            <a class="btn btn-primary" href="#install"><span data-i18n="hero_cta1">Install &amp; learn for free</span>
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a class="btn btn-ghost" href="https://github.com/zam-os/zam" data-i18n="hero_cta2">Read the source</a>
+            <a class="btn btn-ghost" href="#modes" data-i18n="hero_cta2">Explore AI &amp; Agentic modes</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- WHAT IT DOES -->
+    <!-- INSTALL & FREE LEARNING -->
+    <section class="section" id="install">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="inst_eyebrow">Start for free</p>
+          <h2 data-i18n="inst_h2">Install the Desktop or Mobile app and import content in minutes.</h2>
+          <p data-i18n="inst_sub">By default, ZAM opens in Free mode: a calm studio on your computer or Android phone where every free deck and FSRS-6 review works without AI setup.</p>
+        </div>
+        <div class="split">
+          <div class="place studio reveal">
+            <p class="tag" data-i18n="app_tag">1. Install the App</p>
+            <h3 data-i18n="app_h3">ZAM Desktop Studio &amp; Mobile</h3>
+            <p data-i18n="app_p">Download the native Desktop app (macOS, Linux, Windows) or the Mobile app (Android) from GitHub Releases and follow the short free onboarding.</p>
+            <ul class="feat-list">
+              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="app_f1"><b>ZAM Desktop Studio</b> — import decks, review offline, edit concepts and prerequisites, and explore your 3D Knowledge Atlas.</span></li>
+              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="app_f2"><b>ZAM Mobile (Android)</b> — lightweight daily active recall and free Academy cells wherever you go.</span></li>
+              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="app_f3"><b>Quick terminal installer (optional)</b> — <code>curl -fsSL https://zam-os.org/install.sh | sh</code> (or <code>irm https://zam-os.org/install.ps1 | iex</code> on Windows).</span></li>
+            </ul>
+            <p class="note"><a href="https://github.com/zam-os/zam/releases" data-i18n="app_note_link">Download latest installers on GitHub Releases →</a></p>
+          </div>
+          <div class="place workbench reveal">
+            <p class="tag" data-i18n="free_tag">2. Import &amp; Learn Free</p>
+            <h3 data-i18n="free_h3">Free courses, curricula &amp; decks</h3>
+            <p data-i18n="free_p">Bring existing material or grab ready-made learning cells with one click — zero LLM calls required:</p>
+            <ul class="feat-list">
+              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="free_f1"><b>ZAM Academy</b> — free interactive training apps paired with curated cards at <a href="https://academy.zam-os.org">academy.zam-os.org</a>.</span></li>
+              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="free_f2"><b>Open Library &amp; Curricula</b> — browse open-content collections and bundled curriculum topics straight inside the app.</span></li>
+              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="free_f3"><b>Anki <code>.apkg</code>, CSV &amp; TSV</b> — import your existing flashcard decks and keep going with FSRS-6 scheduling.</span></li>
+              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="free_f4"><b>Clean distraction-free recall</b> — ready multiple-choice options when available, classic flashcard recall afterwards.</span></li>
+            </ul>
+            <p class="note" data-i18n="free_note">Works completely offline in one local SQLite database (~/.zam/zam.db).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THREE MODES -->
+    <section class="section" id="modes">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="modes_eyebrow">Three progressive modes</p>
+          <h2 data-i18n="modes_h2">Simple by default. AI and Agentic tools only when you switch them on.</h2>
+          <p data-i18n="modes_sub">The interface stays focused on what you use right now. Turning off AI hides complexity instead of cluttering every screen.</p>
+        </div>
+        <div class="mode-grid reveal">
+          <div class="mode-card free">
+            <p class="tag" data-i18n="m1_tag">Default · Desktop &amp; Mobile</p>
+            <h3 data-i18n="m1_title">Free Mode</h3>
+            <p data-i18n="m1_p">Zero configuration and zero AI cost. Import from <b>ZAM Academy</b>, curricula, Open Library, or <code>.apkg</code>/CSV files. Mode switchers, voice mode, Photo/PDF drafting, and CLI/agent menus stay hidden.</p>
+          </div>
+          <div class="mode-card ai">
+            <p class="tag" data-i18n="m2_tag">Settings Switch + AI Wizard</p>
+            <h3 data-i18n="m2_title">With AI</h3>
+            <p data-i18n="m2_p">Flip Settings from <b>Free</b> to <b>With AI</b> and let the AI Setup Wizard connect a cloud provider or local runner (Ollama, FastFlowLM) for typed answer feedback, reworded questions, voice practice, and Photo/PDF or topic imports.</p>
+          </div>
+          <div class="mode-card agentic">
+            <p class="tag" data-i18n="m3_tag">Opt-in inside AI Mode · Desktop only</p>
+            <h3 data-i18n="m3_title">Agentic Coding <span class="alpha-pill">Alpha</span></h3>
+            <p data-i18n="m3_p">Enable inside AI Settings to install the <code>zam</code> CLI, roll out workspace skills, and connect MCP agents via <code>/zam</code>. Requires a frontier model (<b>Claude Opus+, GPT 6.1 Sol+, Gemini 4+…</b>). Not needed on Mobile.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE CAPABILITIES -->
     <section class="section" id="what">
       <div class="wrap">
         <div class="section-head reveal">
-          <p class="eyebrow" data-i18n="what_eyebrow">What it does today</p>
-          <h2 data-i18n="what_h2">Learning that happens inside your real work.</h2>
+          <p class="eyebrow" data-i18n="what_eyebrow">Built to stick</p>
+          <h2 data-i18n="what_h2">Spaced repetition, prerequisite graphs, and your own data.</h2>
         </div>
         <div class="cap-grid reveal">
           <div class="cap">
-            <svg class="glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5v22M15 5v22"/><path d="M20 9c4 2 4 12 0 14" opacity="0.6"/><path d="M24 6c6 3 6 17 0 20" opacity="0.3"/></svg>
-            <h3 data-i18n="cap1_h3">Rides along in your agent</h3>
-            <p data-i18n="cap1_p">As you work a real task, ZAM breaks it into small concepts, sees which are due to revisit, and weaves them into the session.</p>
-          </div>
-          <div class="cap">
-            <svg class="glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16Z"/><circle cx="16" cy="16" r="3.4"/></svg>
-            <h3 data-i18n="cap2_h3">Watches you work</h3>
-            <p data-i18n="cap2_p">Do a step well on your own and it's quietly marked learned — no interruption. When no task can show what you know, ZAM asks a focused recall question. Both are active recall.</p>
-          </div>
-          <div class="cap">
             <svg class="glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22c3 0 3-9 6-9s3 5 6 5 3-11 6-11 3 7 4 7"/><path d="M4 27h24" opacity="0.35"/></svg>
-            <h3 data-i18n="cap3_h3">Catches what you forget</h3>
-            <p data-i18n="cap3_p">Every concept is scheduled with FSRS-5 spaced repetition over a prerequisite graph — resurfaced right before it would slip.</p>
+            <h3 data-i18n="cap1_h3">FSRS-6 with prerequisite blocking</h3>
+            <p data-i18n="cap1_p">Every concept is scheduled with FSRS-6 over a prerequisite graph — if foundational bricks slip, ZAM surfaces them before asking what builds on top.</p>
           </div>
           <div class="cap">
             <svg class="glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="14" width="20" height="13" rx="2.5"/><path d="M11 14V9a5 5 0 0 1 10 0v5"/><circle cx="16" cy="20.5" r="1.6" fill="currentColor" stroke="none"/></svg>
-            <h3 data-i18n="cap4_h3">Stays on your machine</h3>
-            <p data-i18n="cap4_p">One local SQLite database, shared by the agent and the desktop app. Review works offline; local LLMs are supported.</p>
+            <h3 data-i18n="cap2_h3">Stays on your machine</h3>
+            <p data-i18n="cap2_p">Your library and FSRS cards live in a local SQLite database (<code>~/.zam/zam.db</code>). Optional remote sync or mobile pairing waits in Settings until you ask.</p>
+          </div>
+          <div class="cap">
+            <svg class="glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 16s5-8 13-8 13 8 13 8-5 8-13 8S3 16 3 16Z"/><circle cx="16" cy="16" r="3.4"/></svg>
+            <h3 data-i18n="cap3_h3">Knowledge Atlas</h3>
+            <p data-i18n="cap3_p">See everything you study as islands by subject, retention texture, and prerequisite threads — zoom into one topic and review only that region.</p>
+          </div>
+          <div class="cap">
+            <svg class="glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5v22M15 5v22"/><path d="M20 9c4 2 4 12 0 14" opacity="0.6"/><path d="M24 6c6 3 6 17 0 20" opacity="0.3"/></svg>
+            <h3 data-i18n="cap4_h3">Symbiotic agent observation (Alpha)</h3>
+            <p data-i18n="cap4_p">When Agentic Coding is active on Desktop, ZAM quietly observes real engineering tasks inside your coding agent and turns what matters into practice.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TWO PLACES -->
-    <section class="section" id="places">
+    <!-- AGENTIC CODING ALPHA PATH -->
+    <section class="section" id="agentic">
       <div class="wrap">
         <div class="section-head reveal">
-          <p class="eyebrow" data-i18n="places_eyebrow">Two places, one brain</p>
-          <h2 data-i18n="places_h2">Your agent is the workbench. The Studio is for setup, content&nbsp;&amp; the graph.</h2>
-          <p data-i18n="places_sub">Both share the same local database, so progress in one shows up in the other.</p>
+          <p class="eyebrow" data-i18n="ag_eyebrow">Desktop · Advanced setup · <span class="spark">Alpha</span></p>
+          <h2 data-i18n="ag_h2">The Agentic Coding setup path <span class="alpha-pill">Alpha</span></h2>
+          <p data-i18n="ag_sub">Learning directly from software work via <code>/zam</code> is the deepest setup path in ZAM Desktop. It stays hidden until you switch on AI mode and opt into Agentic Coding — and it requires a very capable frontier model.</p>
         </div>
-        <div class="split">
-          <div class="place workbench reveal">
-            <p class="tag" data-i18n="wb_tag">In your AI agent</p>
-            <h3 data-i18n="wb_h3">The workbench</h3>
-            <p data-i18n="wb_p">Where the real learning happens: real tasks become practice, ZAM observes your work, and guides you step by step. One command wires it in over MCP — then just type <code class="icode">/zam</code>.</p>
-            <div class="chips">
-              <span class="chip"><span class="dot"></span>Claude</span>
+        <div class="qs-layout">
+          <div class="reveal">
+            <ol class="qs-steps">
+              <li><span data-i18n="ag_s1"><b>1. Turn on “With AI”</b> — switch from Free to With AI in Desktop Settings and complete the guided AI Setup Wizard with a frontier model.</span></li>
+              <li><span data-i18n="ag_s2"><b>2. Enable Agentic Coding (Alpha)</b> — check the Agentic Coding option inside AI Settings; ZAM automatically installs the <code>zam</code> CLI on <code>PATH</code> and rolls out <code>/zam</code> and <code>/okf</code> skills into your configured workspaces.</span></li>
+              <li><span data-i18n="ag_s3"><b>3. Connect your coding agent over MCP</b> — walk the Agentic Coding Alpha Wizard to link Claude Code, Codex, Antigravity, Copilot, OpenCode, Goose, or Hermes.</span></li>
+              <li><span data-i18n="ag_s4"><b>4. Work normally with <code>/zam</code></b> — open your agent in a configured workspace, type <code>/zam</code> on real tasks, and keep reviewing what matters in Desktop Studio or Mobile.</span></li>
+            </ol>
+            <div class="alpha-callout" data-i18n="ag_model_note">
+              <b>Model requirement (Alpha):</b> Agentic Coding decomposes real tasks, tracks prerequisite gaps, and observes work unobtrusively. Use a highly capable model such as <b>Claude Opus+</b>, <b>GPT 6.1 Sol+</b>, or <b>Gemini 4+</b> for reliable results.
+            </div>
+            <div class="chips" style="margin-top:20px">
+              <span class="chip"><span class="dot"></span>Claude Code</span>
               <span class="chip"><span class="dot"></span>Codex</span>
               <span class="chip"><span class="dot"></span>Antigravity</span>
-              <span class="chip"><span class="dot"></span>OpenCode</span>
               <span class="chip"><span class="dot"></span>GitHub Copilot</span>
+              <span class="chip"><span class="dot"></span>OpenCode</span>
               <span class="chip"><span class="dot"></span>Goose</span>
               <span class="chip"><span class="dot"></span>Hermes</span>
             </div>
-            <p class="note" data-i18n="wb_note">Observation and guided task-work happen here, inside your agent.</p>
           </div>
-          <div class="place studio reveal">
-            <p class="tag">ZAM Desktop Studio</p>
-            <h3 data-i18n="st_h3">Setup, content &amp; graph</h3>
-            <p data-i18n="st_p">A native app for the things a chat window isn't good at.</p>
-            <ul class="feat-list">
-              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="st_f1"><b>Easier configuration</b> — language and local AI model in a settings panel, not a config file.</span></li>
-              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="st_f2"><b>Import your material</b> — paste notes, point at a source, or walk a curriculum; a wizard turns it into cards.</span></li>
-              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="st_f3"><b>See your knowledge graph</b> — concepts as a living map of what builds on what.</span></li>
-              <li><svg class="tick" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span data-i18n="st_f4"><b>Review</b> — focused active-recall rounds, right in the app.</span></li>
-            </ul>
-            <p class="note" data-i18n="st_note">Review works in both places.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- QUICKSTART -->
-    <section class="section" id="start">
-      <div class="wrap">
-        <div class="qs-layout">
-          <div class="qs-copy reveal">
-            <p class="eyebrow" data-i18n="qs_eyebrow">Quickstart</p>
-            <h2 data-i18n="qs_h2">One line to install. The app guides you from there.</h2>
-            <ol class="qs-steps">
-              <li><span data-i18n="qs_s0"><b>Install</b> — one command puts the desktop app and the <code>zam</code> CLI on your machine. No browser security prompts.</span></li>
-              <li><span data-i18n="qs_s1"><b>Open ZAM</b> — a guided first run sets up who you're learning as, your AI model, your agent, and your first learning content. Skip anything; the dashboard keeps the remaining steps as a checklist.</span></li>
-              <li><span data-i18n="qs_s3"><b>Work</b> — start a real task and type <code>/zam</code>. It handles the rest.</span></li>
-            </ol>
-            <p class="note" data-i18n="qs_alt">Prefer a terminal? The same setup runs as commands — <code>zam init</code> is the guided first run, CLI-style.</p>
-          </div>
-          <div class="term reveal" role="figure" aria-label="ZAM quickstart commands">
+          <div class="term reveal" role="figure" aria-label="Agentic Coding CLI setup commands">
             <div class="term-bar">
               <span class="b"></span><span class="b"></span><span class="b"></span>
-              <span class="t">zsh — ~/dev</span>
+              <span class="t">zsh — ~/dev (Agentic Alpha)</span>
               <button class="copy" id="copyBtn" type="button" data-i18n="copy_btn">Copy</button>
             </div>
-            <div class="term-body" id="termBody"><div class="line"><span class="cmt"># macOS · Linux</span></div><div class="line"><span class="prompt">$</span> <span class="cmd">curl -fsSL https://zam-os.org/install.sh | sh</span></div><div class="line"><span class="cmt"># Windows · PowerShell</span></div><div class="line"><span class="prompt">&gt;</span> <span class="cmd">irm https://zam-os.org/install.ps1 | iex</span></div><div class="line"><span class="out" data-i18n="term_ok0">✓ desktop app + zam CLI · no security prompts</span></div><div class="line">&nbsp;</div><div class="line"><span class="prompt">$</span> <span class="cmd">zam init</span>                   <span class="cmt" data-i18n="term_cmt1"># guided setup</span></div><div class="line"><span class="out" data-i18n="term_ok1">✓ workspace · local AI · database · /zam skill</span></div><div class="line">&nbsp;</div><div class="line"><span class="prompt">$</span> <span class="cmd">zam agent connect claude-code</span>   <span class="cmt" data-i18n="term_cmt2"># or codex · copilot · goose …</span></div><div class="line"><span class="out" data-i18n="term_ok2">✓ MCP server configured</span></div><div class="line">&nbsp;</div><div class="line"><span class="cmt" data-i18n="term_cmt3"># open your agent, start a task, then:</span></div><div class="line"><span class="prompt">›</span> <span class="cmd">/zam</span></div></div>
+            <div class="term-body" id="termBody"><div class="line"><span class="cmt" data-i18n="term_cmt0"># automatically rolled out when Agentic Coding is enabled in Desktop Settings,</span></div><div class="line"><span class="cmt" data-i18n="term_cmt0b"># or run manually on PATH:</span></div><div class="line"><span class="prompt">$</span> <span class="cmd">zam init</span>                   <span class="cmt" data-i18n="term_cmt1"># workspace · frontier AI · /zam skill</span></div><div class="line"><span class="out" data-i18n="term_ok1">✓ zam CLI on PATH · workspace skills rolled out</span></div><div class="line">&nbsp;</div><div class="line"><span class="prompt">$</span> <span class="cmd">zam agent connect claude-code</span>   <span class="cmt" data-i18n="term_cmt2"># or antigravity · codex · copilot …</span></div><div class="line"><span class="out" data-i18n="term_ok2">✓ MCP server configured</span></div><div class="line">&nbsp;</div><div class="line"><span class="cmt" data-i18n="term_cmt3"># open your coding agent inside a workspace, then:</span></div><div class="line"><span class="prompt">›</span> <span class="cmd">/zam</span></div></div>
           </div>
         </div>
       </div>
@@ -384,11 +456,11 @@
         </div>
         <div class="how-grid reveal">
           <dl class="term-def"><dt>token</dt><dd data-i18n="def_token">One atomic concept worth remembering, tagged with a Bloom level (1 remember → 5 create).</dd></dl>
-          <dl class="term-def"><dt>card</dt><dd data-i18n="def_card">Your personal spaced-repetition state for a token, scheduled by FSRS-5.</dd></dl>
+          <dl class="term-def"><dt>card</dt><dd data-i18n="def_card">Your personal spaced-repetition state for a token, scheduled by FSRS-6.</dd></dl>
           <dl class="term-def"><dt>prerequisite</dt><dd data-i18n="def_prereq">A graph of what must be understood first. ZAM won't quiz a concept whose foundations just slipped.</dd></dl>
           <dl class="term-def"><dt>session</dt><dd data-i18n="def_session">Every work-and-learning episode is logged, so ratings come from real evidence.</dd></dl>
         </div>
-        <p class="how-foot reveal" data-i18n="how_foot">The learning engine is an <b>AI-agnostic kernel</b> with zero LLM dependencies — your agent just drives it. Open source, Apache-2.0.</p>
+        <p class="how-foot reveal" data-i18n="how_foot">The learning engine is an <b>AI-agnostic kernel</b> with zero LLM dependencies — Free mode uses it directly offline, and optional AI or coding agents simply layer on top. Open source, Apache-2.0.</p>
       </div>
     </section>
   </main>
@@ -400,19 +472,21 @@
           <span class="mark" aria-hidden="true" style="width:24px;height:24px;display:block"></span>
           ZAM 🤝
         </div>
-        <p data-i18n="foot_tagline"><span class="zam-note">Zam — Bavarian for "together".</span> A symbiotic learning kernel: as your AI grows more capable, so do you.</p>
+        <p data-i18n="foot_tagline"><span class="zam-note">Zam — Bavarian for "together".</span> Free offline learning studio by default; symbiotic AI and Agentic Coding (Alpha) whenever you ask.</p>
       </div>
       <div class="foot-links">
         <div class="grp">
           <span data-i18n="foot_grp_project">Project</span>
           <a href="https://github.com/zam-os/zam" data-i18n="foot_project_source">Source</a>
+          <a href="https://academy.zam-os.org">ZAM Academy</a>
           <a href="https://github.com/zam-os/zam/blob/main/docs/USAGE.md" data-i18n="foot_project_usage">Usage</a>
           <a href="https://github.com/zam-os/zam/tree/main/docs" data-i18n="foot_project_arch">Architecture</a>
         </div>
         <div class="grp">
           <span data-i18n="foot_grp_start">Start</span>
-          <a href="https://github.com/zam-os/zam/releases" data-i18n="foot_start_download">Download</a>
-          <a href="https://github.com/zam-os/zam#quickstart" data-i18n="foot_start_quickstart">Quickstart</a>
+          <a href="https://github.com/zam-os/zam/releases" data-i18n="foot_start_download">Download App</a>
+          <a href="#install" data-i18n="foot_start_quickstart">Free Start</a>
+          <a href="#agentic" data-i18n="foot_start_agentic">Agentic Coding (Alpha)</a>
           <a href="https://github.com/zam-os/zam/blob/main/CONTRIBUTING.md" data-i18n="foot_start_contribute">Contribute</a>
         </div>
       </div>
@@ -429,308 +503,384 @@
 (function () {
   var LOCALES = ["en", "de", "es", "fr", "pt", "zh", "ja"];
   var TITLES = {
-    en: "ZAM — keep the knowledge",
-    de: "ZAM — das Wissen behalten",
-    es: "ZAM — conserva el conocimiento",
-    fr: "ZAM — garder le savoir",
-    pt: "ZAM — fica com o conhecimento",
-    zh: "ZAM — 把知识留下",
-    ja: "ZAM — 知識を手元に"
+    en: "ZAM — Learn freely on Desktop & Mobile, keep what you learn",
+    de: "ZAM — Kostenlos auf Desktop & Mobile lernen und Wissen behalten",
+    es: "ZAM — Aprende gratis en escritorio y móvil, conserva lo aprendido",
+    fr: "ZAM — Apprends gratuitement sur ordinateur et mobile",
+    pt: "ZAM — Aprende grátis no computador e telemóvel",
+    zh: "ZAM — 在桌面端与移动端免费学习，牢记重要知识",
+    ja: "ZAM — デスクトップ＆モバイルで無料学習、学んだ知識を手元に"
   };
   var T = {
     de: {
-      nav_what: `Was es kann`, nav_start: `Loslegen`,
-      hero_eyebrow: `Nicht nur automatisieren — <span class="spark">wachsen</span>`,
-      hero_h1: `Arbeite mit deinem KI-Agenten — und behalte das Wissen, statt es zu verlieren.`,
-      hero_lead: `ZAM macht aus deiner täglichen Arbeit mit dem Agenten aktives Erinnern. Die Aufgabe wird erledigt <strong>und</strong> du wirst besser — Automatisierung ohne Abhängigkeit.`,
-      hero_cta1: `Loslegen`, hero_cta2: `Zum Quellcode`,
-      what_eyebrow: `Was es heute kann`,
-      what_h2: `Lernen, das mitten in deiner echten Arbeit passiert.`,
-      cap1_h3: `Läuft in deinem Agenten mit`,
-      cap1_p: `Während du an einer echten Aufgabe arbeitest, zerlegt ZAM sie in kleine Konzepte, erkennt, welche zur Wiederholung anstehen, und webt sie in die Sitzung ein.`,
-      cap2_h3: `Sieht dir bei der Arbeit zu`,
-      cap2_p: `Machst du einen Schritt selbst gut, wird er still als gelernt markiert — ohne Unterbrechung. Wenn keine Aufgabe zeigen kann, was du weißt, stellt ZAM eine gezielte Erinnerungsfrage. Beides ist aktives Erinnern.`,
-      cap3_h3: `Fängt auf, was du vergisst`,
-      cap3_p: `Jedes Konzept wird mit FSRS-5-Wiederholung über einen Voraussetzungsgraphen geplant — genau dann wieder aufgetaucht, bevor es entgleitet.`,
-      cap4_h3: `Bleibt auf deinem Rechner`,
-      cap4_p: `Eine lokale SQLite-Datenbank, geteilt von Agent und Desktop-App. Wiederholen geht offline; lokale LLMs werden unterstützt.`,
-      places_eyebrow: `Zwei Orte, ein Gehirn`,
-      places_h2: `Dein Agent ist die Werkbank. Das Studio ist für Einrichtung, Inhalte &amp; den Graphen.`,
-      places_sub: `Beide teilen dieselbe lokale Datenbank — Fortschritt an einem Ort erscheint am anderen.`,
-      wb_tag: `In deinem KI-Agenten`, wb_h3: `Die Werkbank`,
-      wb_p: `Hier passiert das echte Lernen: Aufgaben werden zur Übung, ZAM beobachtet deine Arbeit und führt dich Schritt für Schritt. Ein Befehl bindet es über MCP ein — dann tippst du einfach <code class="icode">/zam</code>.`,
-      wb_note: `Beobachtung und begleitete Aufgaben passieren hier, in deinem Agenten.`,
-      st_h3: `Einrichtung, Inhalte &amp; Graph`,
-      st_p: `Eine native App für das, worin ein Chatfenster schlecht ist.`,
-      st_f1: `<b>Einfachere Konfiguration</b> — Sprache und lokales KI-Modell in einem Einstellungsfenster, nicht in einer Konfigdatei.`,
-      st_f2: `<b>Eigenes Material importieren</b> — Notizen einfügen, auf eine Quelle zeigen oder einen Lehrplan durchgehen; ein Assistent macht Karten daraus.`,
-      st_f3: `<b>Deinen Wissensgraphen sehen</b> — Konzepte als lebendige Karte dessen, was worauf aufbaut.`,
-      st_f4: `<b>Wiederholen</b> — fokussierte Active-Recall-Runden, direkt in der App.`,
-      st_note: `Wiederholen geht an beiden Orten.`,
-      qs_eyebrow: `Schnellstart`, qs_h2: `Eine Zeile zum Installieren. Ab da führt dich die App.`,
-      qs_s0: `<b>Installieren</b> — ein Befehl legt Desktop-App und <code>zam</code>-CLI auf deinen Rechner. Keine Sicherheitswarnungen des Browsers.`,
-      qs_s1: `<b>ZAM öffnen</b> — ein geführter erster Start richtet ein, als wer du lernst, dein KI-Modell, deinen Agenten und deinen ersten Lernstoff. Überspring, was du willst; das Dashboard führt die restlichen Schritte als Liste.`,
-      qs_s3: `<b>Arbeite</b> — starte eine echte Aufgabe und tippe <code>/zam</code>. Den Rest übernimmt es.`,
-      qs_alt: `Lieber im Terminal? Dieselbe Einrichtung gibt es als Befehle — <code>zam init</code> ist der geführte erste Start im CLI-Gewand.`,
+      nav_install: `Install &amp; Kostenlos`, nav_modes: `Modi`, nav_agentic: `Agentic Alpha`,
+      hero_eyebrow: `Desktop &amp; Mobile · <span class="spark">Kostenlos &amp; offline zuerst</span>`,
+      hero_h1: `Bewusst lernen — und <span class="warm">behalten</span>, was zählt.`,
+      hero_lead: `Installiere die ZAM Desktop- oder Mobile-App, importiere kostenlose Kurse oder eigene Kartenstapel und wiederhole offline mit FSRS-6. Ohne API-Keys, ohne Cloud-Zwang und ohne Terminal — KI und Agentic Coding (Alpha) sind rein optional.`,
+      hero_cta1: `App installieren &amp; kostenlos lernen`, hero_cta2: `KI- &amp; Agentic-Modi entdecken`,
+      inst_eyebrow: `Kostenlos starten`,
+      inst_h2: `Desktop- oder Mobile-App installieren und in wenigen Minuten loslernen.`,
+      inst_sub: `Standardmäßig startet ZAM im Kostenlos-Modus: eine aufgeräumte Oberfläche auf deinem Rechner oder Android-Gerät, in der Import und FSRS-6-Wiederholung komplett ohne KI funktionieren.`,
+      app_tag: `1. App installieren`,
+      app_h3: `ZAM Desktop Studio &amp; Mobile`,
+      app_p: `Lade die native Desktop-App (macOS, Linux, Windows) oder die Mobile-App (Android) aus den GitHub Releases und durchlaufe die kurze kostenlose Einrichtung.`,
+      app_f1: `<b>ZAM Desktop Studio</b> — Karten importieren, offline lernen, Konzepte und Voraussetzungen bearbeiten und den 3D-Wissensatlas erkunden.`,
+      app_f2: `<b>ZAM Mobile (Android)</b> — schlankes tägliches Erinnern und kostenlose Academy-Lernzellen für unterwegs.`,
+      app_f3: `<b>Schneller Terminal-Installer (optional)</b> — <code>curl -fsSL https://zam-os.org/install.sh | sh</code> (bzw. <code>irm https://zam-os.org/install.ps1 | iex</code> unter Windows).`,
+      app_note_link: `Aktuelle Installer auf GitHub Releases herunterladen →`,
+      free_tag: `2. Kostenlos importieren &amp; lernen`,
+      free_h3: `Kostenlose Kurse, Lehrpläne &amp; eigene Stapel`,
+      free_p: `Starte sofort mit fertigen Lernmaterialien oder bring deine eigenen Stapel mit — komplett ohne KI-Aufrufe:`,
+      free_f1: `<b>ZAM Academy</b> — kostenlose interaktive Trainings-Apps mit passenden Lernkarten unter <a href="https://academy.zam-os.org">academy.zam-os.org</a>.`,
+      free_f2: `<b>Open Library &amp; Lehrpläne</b> — offene Sammlungen und gebündelte Lehrplanthemen direkt in der App übernehmen.`,
+      free_f3: `<b>Anki <code>.apkg</code>, CSV &amp; TSV</b> — vorhandene Stapel importieren und mit FSRS-6 weiterlernen.`,
+      free_f4: `<b>Ablenkungsfreies Wiederholen</b> — fertige Auswahloptionen wo vorhanden, sonst klassisches aktives Erinnern ohne Abfrage-Wirrwarr.`,
+      free_note: `Läuft vollständig offline in einer lokalen SQLite-Datenbank (~/.zam/zam.db).`,
+      modes_eyebrow: `Drei klare Stufen`,
+      modes_h2: `Standardmäßig einfach. KI und Agenten nur, wenn du sie einschaltest.`,
+      modes_sub: `ZAM zeigt immer nur das, was du gerade brauchst. Im Kostenlos-Modus bleiben KI- und Agenten-Einstellungen sauber ausgeblendet.`,
+      m1_tag: `Standard · Desktop &amp; Mobile`,
+      m1_title: `Kostenlos-Modus`,
+      m1_p: `Keine Konfiguration, keine KI-Kosten. Importiere aus <b>ZAM Academy</b>, Lehrplänen, Open Library oder <code>.apkg</code>/CSV-Dateien. Modus-Umschalter, Sprachmodus, Foto-/PDF-Import und CLI-/Agenten-Menüs bleiben verborgen.`,
+      m2_tag: `Schalter in Einstellungen + KI-Assistent`,
+      m2_title: `Mit KI`,
+      m2_p: `Wechsle in den Einstellungen auf <b>Mit KI</b> und richte im geführten KI-Assistenten einen Cloud-Anbieter oder ein lokales Modell (Ollama, FastFlowLM) ein — für Freitext-Feedback, umformulierte Fragen, Sprachmodus sowie Foto-/PDF- und Themen-Import.`,
+      m3_tag: `Optional im KI-Modus · Nur Desktop`,
+      m3_title: `Agentic Coding <span class="alpha-pill">Alpha</span>`,
+      m3_p: `Schalte Agentic Coding im KI-Modus frei, um die <code>zam</code>-CLI zu installieren, Skills in Arbeitsverzeichnissen auszurollen und Coding-Agenten per MCP zu verbinden. Erfordert ein sehr leistungsfähiges Modell (<b>Claude Opus+, GPT 6.1 Sol+, Gemini 4+…</b>). Auf Mobile nicht vorgesehen.`,
+      what_eyebrow: `Auf Dauer angelegt`,
+      what_h2: `Spaced Repetition, Voraussetzungsgraphen und deine eigenen Daten.`,
+      cap1_h3: `FSRS-6 mit Voraussetzungsprüfung`,
+      cap1_p: `Jedes Konzept wird mit FSRS-6 über einen Voraussetzungsgraphen geplant — fehlen Grundlagen, holt ZAM sie zuerst zurück.`,
+      cap2_h3: `Bleibt auf deinem Gerät`,
+      cap2_p: `Bibliothek und FSRS-Karten liegen in deiner lokalen SQLite-Datenbank (<code>~/.zam/zam.db</code>). Server-DB und Handy-Kopplung bleiben späteren Einstellungen vorbehalten.`,
+      cap3_h3: `Wissensatlas`,
+      cap3_p: `Sieh dein Wissen als Inselkarte nach Themen, Erinnerungsstärke und roten Abhängigkeitsfäden — zoome in ein Gebiet und übe gezielt dort.`,
+      cap4_h3: `Symbiotische Beobachtung (Alpha)`,
+      cap4_p: `Wenn Agentic Coding am Desktop aktiv ist, beobachtet ZAM echte Arbeit in deinem Coding-Agenten und macht Wichtiges zu Übungskarten.`,
+      ag_eyebrow: `Desktop · Erweiterter Pfad · <span class="spark">Alpha</span>`,
+      ag_h2: `Einrichtung für Agentic Coding <span class="alpha-pill">Alpha</span>`,
+      ag_sub: `Das Lernen direkt aus realer Software-Arbeit über <code>/zam</code> ist der längste Einrichtungsweg im Desktop Studio. Er bleibt hinter dem KI-Modus verborgen und erfordert ein leistungsstarkes Frontier-Modell.`,
+      ag_s1: `<b>1. „Mit KI“ aktivieren</b> — schalte in den Desktop-Einstellungen von Kostenlos auf Mit KI und verbinde im KI-Assistenten ein starkes Modell.`,
+      ag_s2: `<b>2. Agentic Coding (Alpha) einschalten</b> — aktiviere den Schalter unter den KI-Einstellungen; ZAM installiert die <code>zam</code>-CLI im <code>PATH</code> und rollt die <code>/zam</code>- und <code>/okf</code>-Skills in deinen eingerichteten Arbeitsverzeichnissen aus.`,
+      ag_s3: `<b>3. Coding-Agenten über MCP verbinden</b> — verbinde im Agentic-Alpha-Assistenten Claude Code, Codex, Antigravity, Copilot, OpenCode, Goose oder Hermes.`,
+      ag_s4: `<b>4. Mit <code>/zam</code> arbeiten &amp; behalten</b> — starte eine echte Aufgabe im Agenten, tippe <code>/zam</code> und wiederhole im Studio oder auf Mobile.`,
+      ag_model_note: `<b>Modellanforderung (Alpha):</b> Agentic Coding zerlegt reale Aufgaben, erkennt fehlende Grundlagen und beobachtet leise mit. Für verlässliche Ergebnisse brauchst du eine sehr leistungsfähige KI wie <b>Claude Opus+</b>, <b>GPT 6.1 Sol+</b> oder <b>Gemini 4+</b>.`,
       copy_btn: `Kopieren`,
-      term_ok0: `✓ Desktop-App + zam-CLI · keine Sicherheitswarnungen`,
-      term_cmt1: `# geführte Einrichtung`, term_ok1: `✓ Arbeitsbereich · lokale KI · Datenbank · /zam-Skill`,
-      term_cmt2: `# oder codex · copilot · goose …`, term_ok2: `✓ MCP-Server konfiguriert`,
-      term_cmt3: `# öffne deinen Agenten, starte eine Aufgabe, dann:`,
+      term_cmt0: `# wird beim Aktivieren von Agentic Coding in den Desktop-Einstellungen ausgerollt,`,
+      term_cmt0b: `# oder manuell über die CLI:`,
+      term_cmt1: `# Arbeitsbereich · Frontier-KI · /zam-Skill`, term_ok1: `✓ zam-CLI auf PATH · Skills im Arbeitsbereich ausgerollt`,
+      term_cmt2: `# oder antigravity · codex · copilot …`, term_ok2: `✓ MCP-Server konfiguriert`,
+      term_cmt3: `# öffne deinen Agenten im Arbeitsverzeichnis, dann:`,
       how_eyebrow: `So funktioniert es`, how_h2: `Ein kleines, ehrliches Vokabular.`,
-      def_token: `Ein atomares Konzept, das es sich zu merken lohnt, mit einer Bloom-Stufe (1 erinnern → 5 erschaffen).`,
-      def_card: `Dein persönlicher Wiederholungszustand für ein Token, geplant von FSRS-5.`,
-      def_prereq: `Ein Graph dessen, was zuerst verstanden sein muss. ZAM fragt kein Konzept ab, dessen Grundlagen gerade entglitten sind.`,
-      def_session: `Jede Arbeits- und Lernepisode wird protokolliert, damit Bewertungen aus echten Belegen stammen.`,
-      how_foot: `Die Lern-Engine ist ein <b>KI-agnostischer Kernel</b> ohne jede LLM-Abhängigkeit — dein Agent steuert ihn nur. Open Source, Apache-2.0.`,
-      foot_tagline: `<span class="zam-note">Zam — bairisch für „zusammen".</span> Ein symbiotischer Lern-Kernel: Wird deine KI fähiger, wirst du es auch.`,
+      def_token: `Ein atomares Konzept, das es sich zu merken lohnt, mit Bloom-Stufe (1 erinnern → 5 erschaffen).`,
+      def_card: `Dein persönlicher Wiederholungszustand für ein Token, geplant mit FSRS-6.`,
+      def_prereq: `Ein Graph dessen, was zuerst verstanden sein muss. ZAM fragt kein Konzept ab, dessen Grundlagen fehlen.`,
+      def_session: `Jede Arbeits- und Lernepisode wird protokolliert, damit Bewertungen auf echten Belegen beruhen.`,
+      how_foot: `Die Lern-Engine ist ein <b>KI-agnostischer Kernel</b> ohne LLM-Abhängigkeit — der Kostenlos-Modus nutzt ihn direkt offline, KI und Agenten setzen optional darauf auf. Open Source, Apache-2.0.`,
+      foot_tagline: `<span class="zam-note">Zam — bairisch für „zusammen“.</span> Standardmäßig kostenlos offline lernen; KI und Agentic Coding (Alpha) genau dann, wenn du sie willst.`,
       foot_grp_project: `Projekt`, foot_project_source: `Quellcode`, foot_project_usage: `Nutzung`, foot_project_arch: `Architektur`,
-      foot_grp_start: `Start`, foot_start_download: `Download`, foot_start_quickstart: `Schnellstart`, foot_start_contribute: `Mitmachen`
+      foot_grp_start: `Start`, foot_start_download: `App laden`, foot_start_quickstart: `Kostenlos starten`, foot_start_agentic: `Agentic Coding (Alpha)`, foot_start_contribute: `Mitmachen`
     },
     es: {
-      nav_what: `Qué hace`, nav_start: `Empezar`,
-      hero_eyebrow: `No solo automatices — <span class="spark">crece</span>`,
-      hero_h1: `Haz trabajo real con tu IA — y quédate con el conocimiento en vez de perderlo.`,
-      hero_lead: `ZAM convierte el trabajo diario con tu agente en práctica de recuerdo activo. La tarea se hace <strong>y</strong> tú mejoras — automatización sin dependencia.`,
-      hero_cta1: `Empezar`, hero_cta2: `Ver el código`,
-      what_eyebrow: `Lo que hace hoy`,
-      what_h2: `Aprendizaje que ocurre dentro de tu trabajo real.`,
-      cap1_h3: `Te acompaña en tu agente`,
-      cap1_p: `Mientras trabajas en una tarea real, ZAM la divide en conceptos pequeños, ve cuáles toca repasar y los entreteje en la sesión.`,
-      cap2_h3: `Te observa trabajar`,
-      cap2_p: `Si haces bien un paso por tu cuenta, se marca en silencio como aprendido — sin interrupción. Cuando ninguna tarea puede mostrar lo que sabes, ZAM hace una pregunta de recuerdo concreta. Ambas son recuerdo activo.`,
-      cap3_h3: `Recupera lo que olvidas`,
-      cap3_p: `Cada concepto se programa con repetición espaciada FSRS-5 sobre un grafo de prerrequisitos — reaparece justo antes de que se te escape.`,
-      cap4_h3: `Se queda en tu equipo`,
-      cap4_p: `Una base de datos SQLite local, compartida por el agente y la app de escritorio. El repaso funciona sin conexión; se admiten LLM locales.`,
-      places_eyebrow: `Dos lugares, un cerebro`,
-      places_h2: `Tu agente es el banco de trabajo. El Studio es para configuración, contenido &amp; el grafo.`,
-      places_sub: `Ambos comparten la misma base de datos local, así que el progreso en uno aparece en el otro.`,
-      wb_tag: `En tu agente de IA`, wb_h3: `El banco de trabajo`,
-      wb_p: `Donde ocurre el aprendizaje real: las tareas se vuelven práctica, ZAM observa tu trabajo y te guía paso a paso. Un comando lo conecta por MCP — luego solo escribe <code class="icode">/zam</code>.`,
-      wb_note: `La observación y las tareas guiadas ocurren aquí, dentro de tu agente.`,
-      st_h3: `Configuración, contenido &amp; grafo`,
-      st_p: `Una app nativa para lo que un chat no hace bien.`,
-      st_f1: `<b>Configuración más fácil</b> — idioma y modelo de IA local en un panel de ajustes, no en un archivo de configuración.`,
-      st_f2: `<b>Importa tu material</b> — pega notas, apunta a una fuente o recorre un temario; un asistente lo convierte en tarjetas.`,
-      st_f3: `<b>Mira tu grafo de conocimiento</b> — los conceptos como un mapa vivo de lo que se apoya en qué.`,
-      st_f4: `<b>Repasa</b> — rondas de recuerdo activo enfocadas, en la propia app.`,
-      st_note: `El repaso funciona en ambos lugares.`,
-      qs_eyebrow: `Inicio rápido`, qs_h2: `Una línea para instalar. Desde ahí te guía la app.`,
-      qs_s0: `<b>Instala</b> — un comando pone la app de escritorio y la CLI <code>zam</code> en tu máquina. Sin advertencias de seguridad del navegador.`,
-      qs_s1: `<b>Abre ZAM</b> — un primer arranque guiado configura como quién aprendes, tu modelo de IA, tu agente y tu primer contenido de aprendizaje. Sáltate lo que quieras; el panel guarda los pasos restantes como lista.`,
-      qs_s3: `<b>Trabaja</b> — empieza una tarea real y escribe <code>/zam</code>. Se encarga del resto.`,
-      qs_alt: `¿Prefieres la terminal? La misma configuración existe como comandos — <code>zam init</code> es el primer arranque guiado, en versión CLI.`,
+      nav_install: `Instalar y Gratis`, nav_modes: `Modos`, nav_agentic: `Agentic Alfa`,
+      hero_eyebrow: `Escritorio y Móvil · <span class="spark">Gratis y sin conexión</span>`,
+      hero_h1: `Aprende con intención — y <span class="warm">conserva</span> lo importante.`,
+      hero_lead: `Instala la app de escritorio o móvil de ZAM, importa cursos gratuitos o tus propios mazos y repasa sin conexión con FSRS-6. Sin claves de IA ni terminal — salvo que tú los actives.`,
+      hero_cta1: `Instalar y aprender gratis`, hero_cta2: `Explorar IA y modo Agentic`,
+      inst_eyebrow: `Empieza gratis`,
+      inst_h2: `Instala la app en ordenador o móvil e importa contenido en minutos.`,
+      inst_sub: `Por defecto ZAM abre en modo gratuito: una interfaz limpia donde los mazos gratuitos y el repaso FSRS-6 funcionan sin configurar IA.`,
+      app_tag: `1. Instalar la app`, app_h3: `ZAM Desktop Studio y Móvil`,
+      app_p: `Descarga la app nativa (macOS, Linux, Windows) o Android desde GitHub Releases y sigue la breve bienvenida gratuita.`,
+      app_f1: `<b>ZAM Desktop Studio</b> — importa mazos, repasa sin conexión, edita conceptos y explora tu Atlas de Conocimiento 3D.`,
+      app_f2: `<b>ZAM Móvil (Android)</b> — repaso diario ligero y módulos gratuitos de Academy en tu bolsillo.`,
+      app_f3: `<b>Instalador opcional de terminal</b> — <code>curl -fsSL https://zam-os.org/install.sh | sh</code> (o <code>irm …</code> en Windows).`,
+      app_note_link: `Descargar instaladores en GitHub Releases →`,
+      free_tag: `2. Importar y aprender gratis`, free_h3: `Cursos gratuitos, temarios y tus mazos`,
+      free_p: `Comienza con material listo o importa el tuyo con un clic — cero llamadas a LLMs:`,
+      free_f1: `<b>ZAM Academy</b> — apps gratuitas de práctica con tarjetas curadas en <a href="https://academy.zam-os.org">academy.zam-os.org</a>.`,
+      free_f2: `<b>Biblioteca Abierta y temarios</b> — colecciones libres y currículos incluidos dentro de la app.`,
+      free_f3: `<b>Anki <code>.apkg</code>, CSV y TSV</b> — importa tus barajas existentes y sigue con FSRS-6.`,
+      free_f4: `<b>Recuerdo sin distracciones</b> — opciones listas cuando existen y tarjetas clásicas sin menús de IA.`,
+      free_note: `Funciona totalmente sin conexión sobre una base SQLite local (~/.zam/zam.db).`,
+      modes_eyebrow: `Tres modos progresivos`,
+      modes_h2: `Sencillo por defecto. IA y herramientas de agente solo si las activas.`,
+      modes_sub: `La interfaz muestra solo lo necesario en cada etapa, ocultando el resto.`,
+      m1_tag: `Predeterminado · Escritorio y Móvil`, m1_title: `Modo Gratis`,
+      m1_p: `Cero configuración ni coste de IA. Importa desde <b>ZAM Academy</b>, temarios, Biblioteca Abierta o archivos <code>.apkg</code>/CSV. Se ocultan los selectores de modo, voz e importaciones con IA.`,
+      m2_tag: `Interruptor en Ajustes + Asistente IA`, m2_title: `Con IA`,
+      m2_p: `Cambia a <b>Con IA</b> en Ajustes para abrir el Asistente de IA y conectar modelos en la nube o locales (Ollama, FastFlowLM): evaluación de respuestas escritas, preguntas variables, voz e importación de PDF/temas.`,
+      m3_tag: `Opcional dentro de IA · Solo Escritorio`, m3_title: `Agentic Coding <span class="alpha-pill">Alfa</span>`,
+      m3_p: `Actívalo dentro de Ajustes con IA para instalar la CLI <code>zam</code>, desplegar skills en carpetas de trabajo y conectar agentes MCP vía <code>/zam</code>. Requiere un modelo muy avanzado (<b>Claude Opus+, GPT 6.1 Sol+, Gemini 4+…</b>). No disponible en móvil.`,
+      what_eyebrow: `Diseñado para recordar`,
+      what_h2: `Repetición espaciada, grafo de prerrequisitos y control local.`,
+      cap1_h3: `FSRS-6 con bloqueo de prerrequisitos`, cap1_p: `Programa cada concepto antes de que se olvide sobre un grafo de bases.`,
+      cap2_h3: `Se queda en tu equipo`, cap2_p: `Base SQLite local (<code>~/.zam/zam.db</code>). La sincronización y móvil llegan solo cuando los configuras.`,
+      cap3_h3: `Atlas de Conocimiento`, cap3_p: `Visualiza tus temas como islas de dominio e hilos de requisitos previos.`,
+      cap4_h3: `Observación simbiótica (Alfa)`, cap4_p: `Con Agentic Coding activo en escritorio, ZAM observa tareas reales en tu agente y crea práctica.`,
+      ag_eyebrow: `Escritorio · Ruta avanzada · <span class="spark">Alfa</span>`,
+      ag_h2: `Ruta de configuración Agentic Coding <span class="alpha-pill">Alfa</span>`,
+      ag_sub: `Aprender directamente de tu código con <code>/zam</code> es el camino más largo: permanece oculto bajo el modo IA y exige un modelo frontera muy capaz.`,
+      ag_s1: `<b>1. Activa “Con IA”</b> — pasa de Gratis a Con IA en Ajustes y conecta un modelo frontera en el asistente.`,
+      ag_s2: `<b>2. Activa Agentic Coding (Alfa)</b> — ZAM instala la CLI <code>zam</code> en <code>PATH</code> y despliega las skills <code>/zam</code> y <code>/okf</code> en tus carpetas de trabajo.`,
+      ag_s3: `<b>3. Conecta tu agente por MCP</b> — vincula Claude Code, Codex, Antigravity, Copilot, OpenCode, Goose o Hermes.`,
+      ag_s4: `<b>4. Trabaja con <code>/zam</code></b> — inicia una tarea real, escribe <code>/zam</code> y repasa luego en Studio o móvil.`,
+      ag_model_note: `<b>Requisito de modelo (Alfa):</b> Se necesita un modelo potente como <b>Claude Opus+</b>, <b>GPT 6.1 Sol+</b> o <b>Gemini 4+</b>.`,
       copy_btn: `Copiar`,
-      term_ok0: `✓ app de escritorio + CLI zam · sin advertencias de seguridad`,
-      term_cmt1: `# configuración guiada`, term_ok1: `✓ espacio de trabajo · IA local · base de datos · skill /zam`,
-      term_cmt2: `# o codex · copilot · goose …`, term_ok2: `✓ servidor MCP configurado`,
-      term_cmt3: `# abre tu agente, empieza una tarea y luego:`,
+      term_cmt0: `# se despliega automáticamente al activar Agentic Coding en Ajustes,`, term_cmt0b: `# o manualmente:`,
+      term_cmt1: `# carpeta · IA frontera · skill /zam`, term_ok1: `✓ CLI zam en PATH · skills desplegadas`,
+      term_cmt2: `# o antigravity · codex · copilot …`, term_ok2: `✓ servidor MCP configurado`,
+      term_cmt3: `# abre tu agente en una carpeta de trabajo y escribe:`,
       how_eyebrow: `Cómo funciona`, how_h2: `Un vocabulario pequeño y honesto.`,
-      def_token: `Un concepto atómico que vale la pena recordar, con un nivel de Bloom (1 recordar → 5 crear).`,
-      def_card: `Tu estado personal de repetición espaciada para un token, programado por FSRS-5.`,
-      def_prereq: `Un grafo de lo que hay que entender primero. ZAM no pregunta un concepto cuyas bases se acaban de escapar.`,
-      def_session: `Cada episodio de trabajo y aprendizaje queda registrado, así las valoraciones vienen de pruebas reales.`,
-      how_foot: `El motor de aprendizaje es un <b>kernel agnóstico de IA</b> sin ninguna dependencia de LLM — tu agente solo lo maneja. Código abierto, Apache-2.0.`,
-      foot_tagline: `<span class="zam-note">Zam — bávaro para "juntos".</span> Un kernel de aprendizaje simbiótico: cuanto más capaz es tu IA, más capaz eres tú.`,
+      def_token: `Un concepto atómico con nivel de Bloom (1 recordar → 5 crear).`,
+      def_card: `Tu estado personal de repetición espaciada con FSRS-6.`,
+      def_prereq: `Grafo de fundamentos previos necesarios antes de preguntar lo avanzado.`,
+      def_session: `Cada sesión queda registrada con evidencia real.`,
+      how_foot: `El motor es un <b>kernel agnóstico de IA</b> sin dependencias de LLM: el modo gratuito lo usa directamente sin conexión. Código abierto, Apache-2.0.`,
+      foot_tagline: `<span class="zam-note">Zam — bávaro para "juntos".</span> Estudio gratuito sin conexión por defecto; IA y Agentic Coding (Alfa) cuando tú decidas.`,
       foot_grp_project: `Proyecto`, foot_project_source: `Código`, foot_project_usage: `Uso`, foot_project_arch: `Arquitectura`,
-      foot_grp_start: `Empezar`, foot_start_download: `Descargar`, foot_start_quickstart: `Inicio rápido`, foot_start_contribute: `Contribuir`
+      foot_grp_start: `Empezar`, foot_start_download: `Descargar app`, foot_start_quickstart: `Inicio gratis`, foot_start_agentic: `Agentic Coding (Alfa)`, foot_start_contribute: `Contribuir`
     },
     fr: {
-      nav_what: `Ce qu'il fait`, nav_start: `Commencer`,
-      hero_eyebrow: `Ne pas juste automatiser — <span class="spark">grandir</span>`,
-      hero_h1: `Fais du vrai travail avec ton IA — et garde le savoir au lieu de le perdre.`,
-      hero_lead: `ZAM transforme ton travail quotidien avec ton agent en rappel actif. La tâche est faite <strong>et</strong> tu progresses — l'automatisation sans la dépendance.`,
-      hero_cta1: `Commencer`, hero_cta2: `Voir le code`,
-      what_eyebrow: `Ce qu'il fait aujourd'hui`,
-      what_h2: `Un apprentissage qui se passe au cœur de ton vrai travail.`,
-      cap1_h3: `T'accompagne dans ton agent`,
-      cap1_p: `Pendant que tu travailles sur une vraie tâche, ZAM la découpe en petits concepts, repère ceux à revoir et les tisse dans la session.`,
-      cap2_h3: `Il te regarde travailler`,
-      cap2_p: `Réussis une étape seul et elle est discrètement marquée apprise — sans interruption. Quand aucune tâche ne peut montrer ce que tu sais, ZAM pose une question de rappel ciblée. Les deux, c'est du rappel actif.`,
-      cap3_h3: `Rattrape ce que tu oublies`,
-      cap3_p: `Chaque concept est planifié par répétition espacée FSRS-5 sur un graphe de prérequis — ressorti juste avant qu'il ne t'échappe.`,
-      cap4_h3: `Reste sur ta machine`,
-      cap4_p: `Une base SQLite locale, partagée par l'agent et l'appli de bureau. La révision marche hors ligne ; les LLM locaux sont pris en charge.`,
-      places_eyebrow: `Deux endroits, un cerveau`,
-      places_h2: `Ton agent est l'établi. Le Studio sert à la configuration, au contenu &amp; au graphe.`,
-      places_sub: `Les deux partagent la même base locale : la progression d'un côté apparaît de l'autre.`,
-      wb_tag: `Dans ton agent IA`, wb_h3: `L'établi`,
-      wb_p: `Là où l'apprentissage réel se passe : les tâches deviennent de la pratique, ZAM observe ton travail et te guide pas à pas. Une commande le branche via MCP — puis tape simplement <code class="icode">/zam</code>.`,
-      wb_note: `L'observation et les tâches guidées se passent ici, dans ton agent.`,
-      st_h3: `Configuration, contenu &amp; graphe`,
-      st_p: `Une appli native pour ce qu'une fenêtre de chat fait mal.`,
-      st_f1: `<b>Configuration plus simple</b> — langue et modèle d'IA local dans un panneau de réglages, pas un fichier de config.`,
-      st_f2: `<b>Importe ton matériel</b> — colle des notes, pointe une source ou parcours un programme ; un assistant en fait des cartes.`,
-      st_f3: `<b>Vois ton graphe de connaissances</b> — les concepts en carte vivante de ce qui repose sur quoi.`,
-      st_f4: `<b>Révise</b> — des séries de rappel actif ciblées, directement dans l'appli.`,
-      st_note: `La révision marche aux deux endroits.`,
-      qs_eyebrow: `Démarrage rapide`, qs_h2: `Une ligne pour installer. Ensuite, l'app te guide.`,
-      qs_s0: `<b>Installe</b> — une commande met l'app de bureau et la CLI <code>zam</code> sur ta machine. Aucune alerte de sécurité du navigateur.`,
-      qs_s1: `<b>Ouvre ZAM</b> — un premier démarrage guidé configure qui tu es en tant qu'apprenant, ton modèle d'IA, ton agent et ton premier contenu d'apprentissage. Passe ce que tu veux ; le tableau de bord garde les étapes restantes en liste.`,
-      qs_s3: `<b>Travaille</b> — lance une vraie tâche et tape <code>/zam</code>. Il gère le reste.`,
-      qs_alt: `Tu préfères le terminal ? La même configuration existe en commandes — <code>zam init</code> est le premier démarrage guidé, version CLI.`,
+      nav_install: `Installer &amp; Gratuit`, nav_modes: `Modes`, nav_agentic: `Agentic Alpha`,
+      hero_eyebrow: `Ordinateur &amp; Mobile · <span class="spark">Gratuit et hors ligne</span>`,
+      hero_h1: `Apprends avec intention — et <span class="warm">garde</span> l’essentiel.`,
+      hero_lead: `Installe ZAM sur ordinateur ou mobile, importe des cours gratuits ou tes paquets et révise hors ligne avec FSRS-6. Sans clé IA ni terminal — sauf si tu décides de les activer.`,
+      hero_cta1: `Installer &amp; apprendre gratuitement`, hero_cta2: `Découvrir l’IA &amp; l’Agentic`,
+      inst_eyebrow: `Démarrer gratuitement`,
+      inst_h2: `Installe l’application Desktop ou Mobile et importe tes cartes en quelques minutes.`,
+      inst_sub: `Par défaut, ZAM s’ouvre en mode Gratuit : une interface épurée où tout l’apprentissage FSRS-6 fonctionne sans aucune IA.`,
+      app_tag: `1. Installer l’application`, app_h3: `ZAM Desktop Studio &amp; Mobile`,
+      app_p: `Télécharge l’app native (macOS, Linux, Windows) ou Mobile (Android) depuis GitHub Releases puis suis la courte mise en route gratuite.`,
+      app_f1: `<b>ZAM Desktop Studio</b> — importe, révise hors ligne, édite tes cartes et explore l’Atlas 3D.`,
+      app_f2: `<b>ZAM Mobile (Android)</b> — rappel actif léger et modules Academy gratuits partout.`,
+      app_f3: `<b>Installateur terminal optionnel</b> — <code>curl -fsSL https://zam-os.org/install.sh | sh</code>.`,
+      app_note_link: `Télécharger sur GitHub Releases →`,
+      free_tag: `2. Importer et apprendre gratuitement`, free_h3: `Cours gratuits, programmes &amp; paquets`,
+      free_p: `Démarre en un clic avec des contenus prêts ou importe tes propres fichiers — zéro appel LLM :`,
+      free_f1: `<b>ZAM Academy</b> — applications d’entraînement gratuites et cartes associées sur <a href="https://academy.zam-os.org">academy.zam-os.org</a>.`,
+      free_f2: `<b>Bibliothèque ouverte &amp; programmes</b> — collections libres et cursus intégrés.`,
+      free_f3: `<b>Anki <code>.apkg</code>, CSV &amp; TSV</b> — importe tes paquets existants avec planification FSRS-6.`,
+      free_f4: `<b>Rappel sans distraction</b> — choix prêts quand ils existent, cartes classiques ensuite.`,
+      free_note: `Fonctionne 100 % hors ligne dans une base SQLite locale (~/.zam/zam.db).`,
+      modes_eyebrow: `Trois modes progressifs`,
+      modes_h2: `Simple par défaut. L’IA et les agents uniquement sur demande.`,
+      modes_sub: `Sans IA, tous les menus avancés restent masqués pour aller à l’essentiel.`,
+      m1_tag: `Par défaut · Desktop &amp; Mobile`, m1_title: `Mode Gratuit`,
+      m1_p: `Zéro configuration, zéro coût IA. Importe depuis <b>ZAM Academy</b>, programmes, Open Library ou <code>.apkg</code>/CSV. Le sélecteur de mode, la voix et l’import IA restent cachés.`,
+      m2_tag: `Interrupteur Paramètres + Assistant IA`, m2_title: `Avec IA`,
+      m2_p: `Passe en mode <b>Avec IA</b> dans Paramètres et lance l’assistant IA (cloud ou local Ollama/FastFlowLM) pour les retours rédigés, la voix et l’import PDF/sujet.`,
+      m3_tag: `Optionnel dans IA · Bureau uniquement`, m3_title: `Agentic Coding <span class="alpha-pill">Alpha</span>`,
+      m3_p: `Active-le dans les paramètres IA pour installer la CLI <code>zam</code>, déployer les skills et brancher ton agent MCP via <code>/zam</code>. Exige un modèle avancé (<b>Claude Opus+, GPT 6.1 Sol+, Gemini 4+…</b>). Absent sur mobile.`,
+      what_eyebrow: `Conçu pour durer`,
+      what_h2: `Répétition espacée, prérequis et maîtrise locale.`,
+      cap1_h3: `FSRS-6 avec blocage des prérequis`, cap1_p: `Révise au bon moment et rattrape les bases avant d’aborder la suite.`,
+      cap2_h3: `Reste sur ta machine`, cap2_p: `Une base SQLite locale (<code>~/.zam/zam.db</code>). Synchro distante et mobile restent optionnelles.`,
+      cap3_h3: `Atlas des connaissances`, cap3_p: `Explore tes îlots de savoir et révise une région ciblée.`,
+      cap4_h3: `Observation symbiotique (Alpha)`, cap4_p: `En mode Agentic sur bureau, ZAM suit tes vraies tâches dans l’agent pour créer des rappels.`,
+      ag_eyebrow: `Bureau · Parcours avancé · <span class="spark">Alpha</span>`,
+      ag_h2: `Configurer Agentic Coding <span class="alpha-pill">Alpha</span>`,
+      ag_sub: `C’est le parcours le plus long : caché derrière le mode IA, il nécessite un modèle de pointe capable de décomposer et d’observer des tâches réelles.`,
+      ag_s1: `<b>1. Active « Avec IA »</b> — bascule en mode Avec IA et configure un modèle avancé via l’assistant.`,
+      ag_s2: `<b>2. Active Agentic Coding (Alpha)</b> — ZAM installe la CLI <code>zam</code> sur <code>PATH</code> et déploie les skills <code>/zam</code> et <code>/okf</code> dans tes dossiers de travail.`,
+      ag_s3: `<b>3. Connecte ton agent via MCP</b> — relie Claude Code, Codex, Antigravity, Copilot, OpenCode, Goose ou Hermes.`,
+      ag_s4: `<b>4. Travaille avec <code>/zam</code></b> — lance une tâche réelle puis révise dans Studio ou sur mobile.`,
+      ag_model_note: `<b>Modèle requis (Alpha) :</b> Requiert un modèle très performant tel que <b>Claude Opus+</b>, <b>GPT 6.1 Sol+</b> ou <b>Gemini 4+</b>.`,
       copy_btn: `Copier`,
-      term_ok0: `✓ app de bureau + CLI zam · aucune alerte de sécurité`,
-      term_cmt1: `# configuration guidée`, term_ok1: `✓ espace de travail · IA locale · base de données · skill /zam`,
-      term_cmt2: `# ou codex · copilot · goose …`, term_ok2: `✓ serveur MCP configuré`,
-      term_cmt3: `# ouvre ton agent, lance une tâche, puis :`,
+      term_cmt0: `# déployé automatiquement via les paramètres Desktop,`, term_cmt0b: `# ou manuellement :`,
+      term_cmt1: `# dossier · IA avancée · skill /zam`, term_ok1: `✓ CLI zam sur PATH · skills déployés`,
+      term_cmt2: `# ou antigravity · codex · copilot …`, term_ok2: `✓ serveur MCP configuré`,
+      term_cmt3: `# ouvre ton agent dans le dossier puis tape :`,
       how_eyebrow: `Comment ça marche`, how_h2: `Un petit vocabulaire honnête.`,
-      def_token: `Un concept atomique qui vaut la peine d'être retenu, avec un niveau de Bloom (1 se souvenir → 5 créer).`,
-      def_card: `Ton état personnel de répétition espacée pour un token, planifié par FSRS-5.`,
-      def_prereq: `Un graphe de ce qu'il faut comprendre d'abord. ZAM n'interroge pas un concept dont les bases viennent de t'échapper.`,
-      def_session: `Chaque épisode de travail et d'apprentissage est journalisé, pour que les notes viennent de preuves réelles.`,
-      how_foot: `Le moteur d'apprentissage est un <b>noyau agnostique de l'IA</b> sans aucune dépendance LLM — ton agent ne fait que le piloter. Open source, Apache-2.0.`,
-      foot_tagline: `<span class="zam-note">Zam — bavarois pour « ensemble ».</span> Un noyau d'apprentissage symbiotique : plus ton IA devient capable, plus tu l'es aussi.`,
-      foot_grp_project: `Projet`, foot_project_source: `Code`, foot_project_usage: `Utilisation`, foot_project_arch: `Architecture`,
-      foot_grp_start: `Démarrer`, foot_start_download: `Télécharger`, foot_start_quickstart: `Démarrage rapide`, foot_start_contribute: `Contribuer`
+      def_token: `Concept atomique avec niveau de Bloom (1 mémoriser → 5 créer).`,
+      def_card: `Ton état personnel de répétition espacée FSRS-6.`,
+      def_prereq: `Graphe des bases nécessaires avant d’interroger la suite.`,
+      def_session: `Chaque session enregistre des preuves réelles.`,
+      how_foot: `Le moteur est un <b>noyau agnostique de l’IA</b> sans dépendance LLM — le mode gratuit tourne hors ligne, l’IA et les agents s’y greffent en option. Open source, Apache-2.0.`,
+      foot_tagline: `<span class="zam-note">Zam — bavarois pour « ensemble ».</span> Gratuit et hors ligne par défaut ; IA et Agentic Coding (Alpha) au choix.`,
+      foot_grp_project: `Projet`, foot_project_source: `Code`, foot_project_usage: `Usage`, foot_project_arch: `Architecture`,
+      foot_grp_start: `Démarrer`, foot_start_download: `Télécharger`, foot_start_quickstart: `Démarrer gratuit`, foot_start_agentic: `Agentic Coding (Alpha)`, foot_start_contribute: `Contribuer`
     },
     pt: {
-      nav_what: `O que faz`, nav_start: `Começar`,
-      hero_eyebrow: `Não apenas automatizar — <span class="spark">crescer</span>`,
-      hero_h1: `Faz trabalho real com a tua IA — e fica com o conhecimento em vez de o perderes.`,
-      hero_lead: `A ZAM transforma o teu trabalho diário com o agente em recordação ativa. A tarefa fica feita <strong>e</strong> ficas melhor — automação sem dependência.`,
-      hero_cta1: `Começar`, hero_cta2: `Ver o código`,
-      what_eyebrow: `O que faz hoje`,
-      what_h2: `Aprendizagem que acontece dentro do teu trabalho real.`,
-      cap1_h3: `Acompanha-te no teu agente`,
-      cap1_p: `Enquanto trabalhas numa tarefa real, a ZAM divide-a em pequenos conceitos, vê quais estão para rever e entrelaça-os na sessão.`,
-      cap2_h3: `Observa-te a trabalhar`,
-      cap2_p: `Se fizeres bem um passo sozinho, fica silenciosamente marcado como aprendido — sem interrupção. Quando nenhuma tarefa consegue mostrar o que sabes, a ZAM faz uma pergunta de recordação focada. Ambos são recordação ativa.`,
-      cap3_h3: `Recupera o que esqueces`,
-      cap3_p: `Cada conceito é agendado com repetição espaçada FSRS-5 sobre um grafo de pré-requisitos — reaparece mesmo antes de te escapar.`,
-      cap4_h3: `Fica na tua máquina`,
-      cap4_p: `Uma base de dados SQLite local, partilhada pelo agente e pela app de ambiente de trabalho. A revisão funciona offline; há suporte para LLMs locais.`,
-      places_eyebrow: `Dois lugares, um cérebro`,
-      places_h2: `O teu agente é a bancada. O Studio é para configuração, conteúdo &amp; o grafo.`,
-      places_sub: `Ambos partilham a mesma base de dados local, por isso o progresso num aparece no outro.`,
-      wb_tag: `No teu agente de IA`, wb_h3: `A bancada`,
-      wb_p: `Onde acontece a aprendizagem real: as tarefas tornam-se prática, a ZAM observa o teu trabalho e guia-te passo a passo. Um comando liga-a por MCP — depois é só escrever <code class="icode">/zam</code>.`,
-      wb_note: `A observação e as tarefas guiadas acontecem aqui, dentro do teu agente.`,
-      st_h3: `Configuração, conteúdo &amp; grafo`,
-      st_p: `Uma app nativa para aquilo em que uma janela de chat é fraca.`,
-      st_f1: `<b>Configuração mais fácil</b> — idioma e modelo de IA local num painel de definições, não num ficheiro de configuração.`,
-      st_f2: `<b>Importa o teu material</b> — cola notas, aponta para uma fonte ou percorre um currículo; um assistente transforma-o em cartões.`,
-      st_f3: `<b>Vê o teu grafo de conhecimento</b> — conceitos como um mapa vivo do que assenta em quê.`,
-      st_f4: `<b>Revê</b> — rondas de recordação ativa focadas, na própria app.`,
-      st_note: `A revisão funciona nos dois lugares.`,
-      qs_eyebrow: `Início rápido`, qs_h2: `Uma linha para instalar. A partir daí, a app guia-te.`,
-      qs_s0: `<b>Instala</b> — um comando põe a app de desktop e a CLI <code>zam</code> na tua máquina. Sem avisos de segurança do navegador.`,
-      qs_s1: `<b>Abre o ZAM</b> — um primeiro arranque guiado configura como quem aprendes, o teu modelo de IA, o teu agente e o teu primeiro conteúdo de aprendizagem. Salta o que quiseres; o painel guarda os passos restantes numa lista.`,
-      qs_s3: `<b>Trabalha</b> — inicia uma tarefa real e escreve <code>/zam</code>. Trata do resto.`,
-      qs_alt: `Preferes o terminal? A mesma configuração existe como comandos — <code>zam init</code> é o primeiro arranque guiado, em versão CLI.`,
+      nav_install: `Instalar &amp; Grátis`, nav_modes: `Modos`, nav_agentic: `Agentic Alfa`,
+      hero_eyebrow: `Desktop &amp; Mobile · <span class="spark">Grátis e offline primeiro</span>`,
+      hero_h1: `Aprende com propósito — e <span class="warm">guarda</span> o essencial.`,
+      hero_lead: `Instala a app ZAM Desktop ou Mobile, importa cursos gratuitos ou os teus baralhos e revê offline com FSRS-6. Sem chaves de IA nem terminal — a não ser que os atives.`,
+      hero_cta1: `Instalar &amp; aprender grátis`, hero_cta2: `Explorar modos IA e Agentic`,
+      inst_eyebrow: `Começar grátis`,
+      inst_h2: `Instala no computador ou telemóvel e começa em minutos.`,
+      inst_sub: `Por defeito o ZAM abre em Modo Gratuito: tudo funciona offline com FSRS-6 sem configurar IA.`,
+      app_tag: `1. Instalar a app`, app_h3: `ZAM Desktop Studio &amp; Mobile`,
+      app_p: `Descarrega a app nativa (macOS, Linux, Windows) ou Android nas GitHub Releases e conclui o arranque gratuito.`,
+      app_f1: `<b>ZAM Desktop Studio</b> — importa conteúdos, revê offline e explora o Atlas 3D.`,
+      app_f2: `<b>ZAM Mobile (Android)</b> — recordação diária leve e células gratuitas da Academy.`,
+      app_f3: `<b>Instalador opcional de terminal</b> — <code>curl -fsSL https://zam-os.org/install.sh | sh</code>.`,
+      app_note_link: `Descarregar no GitHub Releases →`,
+      free_tag: `2. Importar &amp; aprender grátis`, free_h3: `Cursos grátis, currículos e baralhos`,
+      free_p: `Começa com material curado ou importa os teus ficheiros sem chamadas a LLM:`,
+      free_f1: `<b>ZAM Academy</b> — apps gratuitas de prática e cartões em <a href="https://academy.zam-os.org">academy.zam-os.org</a>.`,
+      free_f2: `<b>Biblioteca Aberta e currículos</b> — coleções livres e tópicos curriculares na app.`,
+      free_f3: `<b>Anki <code>.apkg</code>, CSV e TSV</b> — importa os teus baralhos com FSRS-6.`,
+      free_f4: `<b>Recordação limpa</b> — escolhas prontas quando disponíveis e cartões clássicos.`,
+      free_note: `Funciona offline numa base SQLite local (~/.zam/zam.db).`,
+      modes_eyebrow: `Três modos progressivos`,
+      modes_h2: `Simples por defeito. IA e agentes apenas quando os ligas.`,
+      modes_sub: `No modo gratuito, opções de IA, voz e terminal ficam ocultas.`,
+      m1_tag: `Padrão · Desktop &amp; Mobile`, m1_title: `Modo Gratuito`,
+      m1_p: `Zero configuração e custo zero. Importa de <b>ZAM Academy</b>, currículos, Open Library ou <code>.apkg</code>/CSV.`,
+      m2_tag: `Interruptor em Definições + Assistente IA`, m2_title: `Com IA`,
+      m2_p: `Muda para <b>Com IA</b> e usa o assistente (nuvem ou local Ollama/FastFlowLM) para feedback escrito, voz e importação de PDF/temas.`,
+      m3_tag: `Opcional dentro da IA · Só Desktop`, m3_title: `Agentic Coding <span class="alpha-pill">Alfa</span>`,
+      m3_p: `Instala a CLI <code>zam</code>, distribui skills e liga agentes MCP via <code>/zam</code>. Exige um modelo de topo (<b>Claude Opus+, GPT 6.1 Sol+, Gemini 4+…</b>).`,
+      what_eyebrow: `Feito para ficar`,
+      what_h2: `Repetição espaçada, pré-requisitos e dados locais.`,
+      cap1_h3: `FSRS-6 com pré-requisitos`, cap1_p: `Agenda no momento certo e recupera bases esquecidas primeiro.`,
+      cap2_h3: `Fica na tua máquina`, cap2_p: `Base SQLite local (<code>~/.zam/zam.db</code>). Sincronização remota é opcional.`,
+      cap3_h3: `Atlas do Conhecimento`, cap3_p: `Mapa em ilhas dos teus domínios e dependências.`,
+      cap4_h3: `Observação simbiótica (Alfa)`, cap4_p: `No Agentic Coding em Desktop, o ZAM observa tarefas reais no teu agente.`,
+      ag_eyebrow: `Desktop · Caminho avançado · <span class="spark">Alfa</span>`,
+      ag_h2: `Configuração Agentic Coding <span class="alpha-pill">Alfa</span>`,
+      ag_sub: `É o percurso mais extenso: fica dentro do modo IA e exige modelos fronteira muito capazes.`,
+      ag_s1: `<b>1. Ativa “Com IA”</b> — muda para Com IA e liga um modelo avançado no assistente.`,
+      ag_s2: `<b>2. Liga Agentic Coding (Alfa)</b> — instala a CLI <code>zam</code> no <code>PATH</code> e distribui skills <code>/zam</code> e <code>/okf</code> nas pastas de trabalho.`,
+      ag_s3: `<b>3. Liga o teu agente MCP</b> — associa Claude Code, Codex, Antigravity, Copilot, OpenCode, Goose ou Hermes.`,
+      ag_s4: `<b>4. Trabalha com <code>/zam</code></b> — inicia uma tarefa real e revê no Studio ou Mobile.`,
+      ag_model_note: `<b>Requisito (Alfa):</b> Requer modelos avançados como <b>Claude Opus+</b>, <b>GPT 6.1 Sol+</b> ou <b>Gemini 4+</b>.`,
       copy_btn: `Copiar`,
-      term_ok0: `✓ app de ambiente de trabalho + CLI zam · sem avisos de segurança`,
-      term_cmt1: `# configuração guiada`, term_ok1: `✓ espaço de trabalho · IA local · base de dados · skill /zam`,
-      term_cmt2: `# ou codex · copilot · goose …`, term_ok2: `✓ servidor MCP configurado`,
-      term_cmt3: `# abre o teu agente, inicia uma tarefa e depois:`,
-      how_eyebrow: `Como funciona`, how_h2: `Um vocabulário pequeno e honesto.`,
-      def_token: `Um conceito atómico que vale a pena lembrar, com um nível de Bloom (1 lembrar → 5 criar).`,
-      def_card: `O teu estado pessoal de repetição espaçada para um token, agendado pelo FSRS-5.`,
-      def_prereq: `Um grafo do que é preciso entender primeiro. A ZAM não pergunta um conceito cujas bases acabaram de te escapar.`,
-      def_session: `Cada episódio de trabalho e aprendizagem é registado, para que as avaliações venham de provas reais.`,
-      how_foot: `O motor de aprendizagem é um <b>núcleo agnóstico de IA</b> sem qualquer dependência de LLM — o teu agente apenas o conduz. Código aberto, Apache-2.0.`,
-      foot_tagline: `<span class="zam-note">Zam — bávaro para "juntos".</span> Um núcleo de aprendizagem simbiótico: quanto mais capaz a tua IA, mais capaz és tu.`,
-      foot_grp_project: `Projeto`, foot_project_source: `Código`, foot_project_usage: `Utilização`, foot_project_arch: `Arquitetura`,
-      foot_grp_start: `Começar`, foot_start_download: `Transferir`, foot_start_quickstart: `Início rápido`, foot_start_contribute: `Contribuir`
+      term_cmt0: `# executado ao ativar Agentic Coding nas Definições,`, term_cmt0b: `# ou manualmente:`,
+      term_cmt1: `# pasta · IA avançada · skill /zam`, term_ok1: `✓ CLI zam no PATH · skills distribuídas`,
+      term_cmt2: `# ou antigravity · codex · copilot …`, term_ok2: `✓ servidor MCP configurado`,
+      term_cmt3: `# abre o agente numa pasta de trabalho e escreve:`,
+      how_eyebrow: `Como funciona`, how_h2: `Vocabulário pequeno e honesto.`,
+      def_token: `Conceito atómico com nível de Bloom (1 lembrar → 5 criar).`,
+      def_card: `Estado pessoal FSRS-6 para um token.`,
+      def_prereq: `Grafo de bases necessárias antes de avançar.`,
+      def_session: `Cada sessão regista evidência real.`,
+      how_foot: `O motor é um <b>núcleo agnóstico de IA</b> sem dependências de LLM. Código aberto, Apache-2.0.`,
+      foot_tagline: `<span class="zam-note">Zam — bávaro para "juntos".</span> Grátis e offline por defeito; IA e Agentic Coding (Alfa) quando quiseres.`,
+      foot_grp_project: `Projeto`, foot_project_source: `Código`, foot_project_usage: `Uso`, foot_project_arch: `Arquitetura`,
+      foot_grp_start: `Começar`, foot_start_download: `Transferir`, foot_start_quickstart: `Início grátis`, foot_start_agentic: `Agentic Coding (Alfa)`, foot_start_contribute: `Contribuir`
     },
     zh: {
-      nav_what: `功能`, nav_start: `开始使用`,
-      hero_eyebrow: `不只是自动化——<span class="spark">更要成长</span>`,
-      hero_h1: `用你的 AI 做真正的工作——把知识留下，而不是丢掉。`,
-      hero_lead: `ZAM 把你与智能体的日常工作变成主动回忆练习。任务完成了，<strong>而且</strong>你也更强了——自动化，但不依赖。`,
-      hero_cta1: `开始使用`, hero_cta2: `查看源码`,
-      what_eyebrow: `现在能做什么`,
-      what_h2: `在你真实的工作中发生的学习。`,
-      cap1_h3: `在你的智能体中随行`,
-      cap1_p: `当你处理真实任务时，ZAM 把它拆成一个个小概念，看出哪些该复习，并织入这次会话。`,
-      cap2_h3: `观察你的工作`,
-      cap2_p: `你自己把某一步做好，它就悄悄标记为已掌握——不打断你。当没有任务能体现你的掌握时，ZAM 会提出一个有针对性的回忆问题。两者都是主动回忆。`,
-      cap3_h3: `接住你正在遗忘的`,
-      cap3_p: `每个概念都用 FSRS-5 间隔重复、基于前置知识图谱来安排——正好在它要溜走之前再次出现。`,
-      cap4_h3: `留在你的机器上`,
-      cap4_p: `一个本地 SQLite 数据库，由智能体和桌面应用共享。复习可离线进行；支持本地 LLM。`,
-      places_eyebrow: `两处，一脑`,
-      places_h2: `你的智能体是工作台。Studio 负责设置、内容 &amp; 知识图谱。`,
-      places_sub: `两者共享同一个本地数据库，一处的进度会在另一处出现。`,
-      wb_tag: `在你的 AI 智能体里`, wb_h3: `工作台`,
-      wb_p: `真正的学习在这里发生：任务成为练习，ZAM 观察你的工作并一步步引导。一条命令通过 MCP 接入——然后只需输入 <code class="icode">/zam</code>。`,
-      wb_note: `观察和引导式任务都在这里、在你的智能体内进行。`,
-      st_h3: `设置、内容 &amp; 图谱`,
-      st_p: `一个原生应用，专做聊天窗口不擅长的事。`,
-      st_f1: `<b>更简单的配置</b>——在设置面板里选语言和本地 AI 模型，而不是改配置文件。`,
-      st_f2: `<b>导入你的材料</b>——粘贴笔记、指向某个来源，或走一遍课程；向导把它变成卡片。`,
-      st_f3: `<b>查看你的知识图谱</b>——概念是一张活的地图，显示什么建立在什么之上。`,
-      st_f4: `<b>复习</b>——专注的主动回忆轮次，就在应用里。`,
-      st_note: `两处都能复习。`,
-      qs_eyebrow: `快速开始`, qs_h2: `一行命令完成安装。之后由应用引导你。`,
-      qs_s0: `<b>安装</b>——一条命令即可把桌面应用和 <code>zam</code> CLI 装到你的机器上。没有浏览器安全提示。`,
-      qs_s1: `<b>打开 ZAM</b>——引导式首次启动会设置你的学习身份、AI 模型、智能体和第一批学习内容。想跳过就跳过；仪表盘会把剩余步骤列成清单。`,
-      qs_s3: `<b>开始工作</b>——启动一个真实任务并输入 <code>/zam</code>，其余交给它。`,
-      qs_alt: `更喜欢终端？同样的设置也有命令版——<code>zam init</code> 就是 CLI 形式的引导式首次启动。`,
+      nav_install: `安装与免费学习`, nav_modes: `模式`, nav_agentic: `Agentic Alpha`,
+      hero_eyebrow: `桌面端 &amp; 移动端 · <span class="spark">免费离线优先</span>`,
+      hero_h1: `刻意学习——把重要的知识真正<span class="warm">留下</span>。`,
+      hero_lead: `安装 ZAM 桌面或移动应用，免费导入课程或你自己的卡片组，用 FSRS-6 间隔重复离线复习。无需 API 密钥或命令行——除非你主动开启 AI 或 Agentic Coding（Alpha）。`,
+      hero_cta1: `安装应用并免费学习`, hero_cta2: `查看 AI 与 Agentic 模式`,
+      inst_eyebrow: `免费起步`,
+      inst_h2: `安装桌面或手机应用，几分钟内导入首批学习内容。`,
+      inst_sub: `ZAM 默认开启免费模式：界面简洁，所有免费内容和 FSRS-6 复习无需连接任何 AI。`,
+      app_tag: `1. 安装应用`, app_h3: `ZAM Desktop Studio 与移动端`,
+      app_p: `从 GitHub Releases 下载桌面端（macOS / Linux / Windows）或 Android 手机端并完成简短引导。`,
+      app_f1: `<b>ZAM Desktop Studio</b>——导入词卡、离线复习、编辑概念与前置关系、浏览 3D 知识图谱。`,
+      app_f2: `<b>ZAM Mobile（Android）</b>——随时随地轻量复习与学习免费 Academy 单元。`,
+      app_f3: `<b>命令行快捷安装（可选）</b>——<code>curl -fsSL https://zam-os.org/install.sh | sh</code>。`,
+      app_note_link: `前往 GitHub Releases 下载安装包 →`,
+      free_tag: `2. 免费导入与学习`, free_h3: `免费课程、教学大纲与自有词卡`,
+      free_p: `零 AI 调用直接导入以下来源：`,
+      free_f1: `<b>ZAM Academy</b>——<a href="https://academy.zam-os.org">academy.zam-os.org</a> 的免费交互训练与现成卡片。`,
+      free_f2: `<b>开放词库与课程</b>——直接挑选开放内容或内置课程单元。`,
+      free_f3: `<b>Anki <code>.apkg</code>、CSV 与 TSV</b>——导入现有牌组并用 FSRS-6 继续记忆。`,
+      free_f4: `<b>无干扰回忆</b>——有预设选项时优先选择，否则使用经典闪卡复习。`,
+      free_note: `数据全部保存在本地 SQLite（~/.zam/zam.db），完全离线可用。`,
+      modes_eyebrow: `三层渐进模式`,
+      modes_h2: `默认极简免费，仅在需要时开启 AI 与智能体。`,
+      modes_sub: `在免费模式下隐藏所有 AI、语音与智能体选项，保持专注。`,
+      m1_tag: `默认 · 桌面 &amp; 移动`, m1_title: `免费模式`,
+      m1_p: `零配置零费用。从 <b>ZAM Academy</b>、课程、开放词库或 <code>.apkg</code>/CSV 导入，自动隐藏模式切换、语音及 AI 导入功能。`,
+      m2_tag: `设置开关 + AI 向导`, m2_title: `使用 AI`,
+      m2_p: `在设置切换到 <b>使用 AI</b> 并通过向导连接云端或本地模型（Ollama / FastFlowLM），解锁问答AI反馈、变体提问、语音和图片/PDF/主题导入。`,
+      m3_tag: `AI 模式内可选 · 仅桌面`, m3_title: `Agentic Coding <span class="alpha-pill">Alpha</span>`,
+      m3_p: `安装 <code>zam</code> CLI、向工作区部署技能并连接 MCP 智能体使用 <code>/zam</code>。需要顶尖大模型（<b>Claude Opus+、GPT 6.1 Sol+、Gemini 4+…</b>）。移动端不支持。`,
+      what_eyebrow: `长久保持`,
+      what_h2: `FSRS-6 间隔重复、前置图谱与本地隐私。`,
+      cap1_h3: `带前置阻断的 FSRS-6`, cap1_p: `忘掉基础概念时，先巩固前置知识再复习进阶内容。`,
+      cap2_h3: `留在本地设备`, cap2_p: `本地 SQLite（<code>~/.zam/zam.db</code>），多端同步完全可选。`,
+      cap3_h3: `知识地图集`, cap3_p: `按学科与掌握程度浏览你的知识岛屿与关联线索。`,
+      cap4_h3: `智能体协同观察（Alpha）`, cap4_p: `开启 Agentic Coding 后，ZAM 会在真实任务中观察并将要点转化为练习。`,
+      ag_eyebrow: `桌面端 · 进阶路径 · <span class="spark">Alpha</span>`,
+      ag_h2: `Agentic Coding 设置路径 <span class="alpha-pill">Alpha</span>`,
+      ag_sub: `通过 <code>/zam</code> 从真实编码任务中学习是配置路径最长的高级模式，仅隐藏在 AI 模式之下并需要顶尖前沿模型。`,
+      ag_s1: `<b>1. 开启“使用 AI”</b>——在桌面端设置开启 AI 并用向导连接强能力大模型。`,
+      ag_s2: `<b>2. 勾选 Agentic Coding（Alpha）</b>——ZAM 自动将 <code>zam</code> CLI 安装到 <code>PATH</code> 并在已配置工作目录部署 <code>/zam</code> 与 <code>/okf</code> 技能。`,
+      ag_s3: `<b>3. 通过 MCP 连接编程智能体</b>——关联 Claude Code、Codex、Antigravity、Copilot、OpenCode、Goose 或 Hermes。`,
+      ag_s4: `<b>4. 用 <code>/zam</code> 实战巩固</b>——在工作区启动智能体任务并输入 <code>/zam</code>。`,
+      ag_model_note: `<b>模型要求（Alpha）：</b> 请使用 <b>Claude Opus+</b>、<b>GPT 6.1 Sol+</b> 或 <b>Gemini 4+</b> 等强模型。`,
       copy_btn: `复制`,
-      term_ok0: `✓ 桌面应用 + zam 命令行 · 无安全提示`,
-      term_cmt1: `# 引导式设置`, term_ok1: `✓ 工作区 · 本地 AI · 数据库 · /zam 技能`,
-      term_cmt2: `# 或 codex · copilot · goose …`, term_ok2: `✓ 已配置 MCP 服务器`,
-      term_cmt3: `# 打开你的智能体，开始一个任务，然后：`,
-      how_eyebrow: `工作原理`, how_h2: `一套小而诚实的术语。`,
-      def_token: `一个值得记住的原子概念，带有布鲁姆层级（1 记忆 → 5 创造）。`,
-      def_card: `你对某个 token 的个人间隔重复状态，由 FSRS-5 安排。`,
-      def_prereq: `一张“需要先理解什么”的图。ZAM 不会去考一个根基刚刚溜走的概念。`,
-      def_session: `每一次工作与学习都会被记录，所以评分来自真实证据。`,
-      how_foot: `学习引擎是一个<b>与 AI 无关的内核</b>，不依赖任何 LLM——你的智能体只是驱动它。开源，Apache-2.0。`,
-      foot_tagline: `<span class="zam-note">Zam——巴伐利亚语的“一起”。</span> 一个共生的学习内核：你的 AI 越强，你也越强。`,
-      foot_grp_project: `项目`, foot_project_source: `源码`, foot_project_usage: `使用`, foot_project_arch: `架构`,
-      foot_grp_start: `开始`, foot_start_download: `下载`, foot_start_quickstart: `快速开始`, foot_start_contribute: `参与贡献`
+      term_cmt0: `# 在桌面设置中开启 Agentic Coding 时自动执行，`, term_cmt0b: `# 也可手动运行：`,
+      term_cmt1: `# 工作区 · 前沿 AI · /zam 技能`, term_ok1: `✓ zam CLI 已加入 PATH · 技能已部署`,
+      term_cmt2: `# 或 antigravity · codex · copilot …`, term_ok2: `✓ MCP 服务器已配置`,
+      term_cmt3: `# 在工作目录打开智能体并输入：`,
+      how_eyebrow: `核心机制`, how_h2: `小而坦诚的核心概念。`,
+      def_token: `一个带有布鲁姆层级的原子知识点。`,
+      def_card: `由 FSRS-6 调度的个人记忆卡片状态。`,
+      def_prereq: `知识依赖图谱，基础不牢时不强行考核进阶点。`,
+      def_session: `记录每次学习或编码任务以提供真实依据。`,
+      how_foot: `底层是<b>零 LLM 依赖的 AI 无关内核</b>——免费模式直接离线运行。开源 Apache-2.0。`,
+      foot_tagline: `<span class="zam-note">Zam——巴伐利亚语意为“一起”。</span> 默认免费离线学习，按需开启 AI 与 Agentic Coding（Alpha）。`,
+      foot_grp_project: `项目`, foot_project_source: `源码`, foot_project_usage: `使用说明`, foot_project_arch: `架构`,
+      foot_grp_start: `开始`, foot_start_download: `下载应用`, foot_start_quickstart: `免费起步`, foot_start_agentic: `Agentic Coding (Alpha)`, foot_start_contribute: `参与贡献`
     },
     ja: {
-      nav_what: `できること`, nav_start: `はじめる`,
-      hero_eyebrow: `自動化するだけでなく——<span class="spark">伸びる</span>`,
-      hero_h1: `AI と本当の仕事をして——知識を失わずに、手元に残す。`,
-      hero_lead: `ZAM は、エージェントとの日々の仕事をアクティブ・リコールの練習に変えます。タスクは片づき、<strong>しかも</strong>あなたも鋭くなる——依存しない自動化。`,
-      hero_cta1: `はじめる`, hero_cta2: `ソースを見る`,
-      what_eyebrow: `今できること`,
-      what_h2: `あなたの実際の仕事の中で起きる学習。`,
-      cap1_h3: `エージェントの中で寄り添う`,
-      cap1_p: `実際のタスクに取り組む間、ZAM はそれを小さな概念に分け、復習すべきものを見つけ、セッションに織り込みます。`,
-      cap2_h3: `作業を見守る`,
-      cap2_p: `自分でうまくできたステップは、そっと「習得済み」になります——邪魔はしません。知識を示せるタスクがないときは、ZAM が的を絞った想起の質問をします。どちらもアクティブ・リコールです。`,
-      cap3_h3: `忘れかけを拾い上げる`,
-      cap3_p: `どの概念も、前提知識グラフの上で FSRS-5 の間隔反復により予定されます——こぼれ落ちる直前に、もう一度現れます。`,
-      cap4_h3: `あなたのマシンに留まる`,
-      cap4_p: `ローカルの SQLite データベース一つを、エージェントとデスクトップアプリで共有。復習はオフラインでも動作し、ローカル LLM にも対応します。`,
-      places_eyebrow: `二つの場所、一つの頭脳`,
-      places_h2: `エージェントは作業台。Studio は設定・コンテンツ &amp; グラフのために。`,
-      places_sub: `どちらも同じローカルデータベースを共有するので、一方の進捗がもう一方に現れます。`,
-      wb_tag: `あなたの AI エージェント内`, wb_h3: `作業台`,
-      wb_p: `本当の学習が起きる場所：タスクが練習になり、ZAM があなたの作業を見守り、一歩ずつ導きます。一つのコマンドで MCP 経由でつながり——あとは <code class="icode">/zam</code> と入力するだけ。`,
-      wb_note: `観察とガイド付きのタスクは、ここ、あなたのエージェントの中で行われます。`,
-      st_h3: `設定・コンテンツ &amp; グラフ`,
-      st_p: `チャット画面が苦手なことのための、ネイティブアプリ。`,
-      st_f1: `<b>より簡単な設定</b>——言語とローカル AI モデルを、設定ファイルではなく設定画面で。`,
-      st_f2: `<b>教材を取り込む</b>——メモを貼る、ソースを指定する、カリキュラムをたどる；ウィザードがカードに変えます。`,
-      st_f3: `<b>知識グラフを見る</b>——何が何の上に築かれるかを示す、生きた地図としての概念。`,
-      st_f4: `<b>復習</b>——集中したアクティブ・リコールを、そのままアプリ内で。`,
-      st_note: `復習はどちらの場所でもできます。`,
-      qs_eyebrow: `クイックスタート`, qs_h2: `インストールは一行。あとはアプリが案内します。`,
-      qs_s0: `<b>インストール</b>——コマンド一つでデスクトップアプリと <code>zam</code> CLI がマシンに入ります。ブラウザのセキュリティ警告なし。`,
-      qs_s1: `<b>ZAM を開く</b>——ガイド付きの初回起動で、学ぶ立場・AI モデル・エージェント・最初の学習コンテンツを設定。スキップも自由——残りの手順はダッシュボードがチェックリストで保持します。`,
-      qs_s3: `<b>作業する</b>——実際のタスクを始めて <code>/zam</code> と入力。あとはお任せ。`,
-      qs_alt: `ターミナル派？同じセットアップはコマンドでも——<code>zam init</code> が CLI 版のガイド付き初回セットアップです。`,
+      nav_install: `インストール・無料`, nav_modes: `モード`, nav_agentic: `Agentic Alpha`,
+      hero_eyebrow: `デスクトップ &amp; モバイル · <span class="spark">無料・オフライン優先</span>`,
+      hero_h1: `意図して学び——大切な知識を<span class="warm">残す</span>。`,
+      hero_lead: `ZAM のデスクトップまたはモバイルアプリを入れ、無料コースや自分のデッキを取り込み、FSRS-6 でオフライン復習。API キーもターミナルも不要です（AI と Agentic Coding (Alpha) は任意）。`,
+      hero_cta1: `アプリを入れて無料で学ぶ`, hero_cta2: `AI・Agentic モードを見る`,
+      inst_eyebrow: `無料で始める`,
+      inst_h2: `Desktop / Mobile アプリを入れて、数分で学習開始。`,
+      inst_sub: `初期状態は無料モード。シンプルな画面で無料教材のインポートと FSRS-6 復習が AI なしで動きます。`,
+      app_tag: `1. アプリを入れる`, app_h3: `ZAM Desktop Studio &amp; Mobile`,
+      app_p: `GitHub Releases からデスクトップ版（macOS / Linux / Windows）または Android 版を取得し、無料ウィザードを進めます。`,
+      app_f1: `<b>ZAM Desktop Studio</b> — 取り込み、オフライン復習、カード編集、3D ナレッジアトラス。`,
+      app_f2: `<b>ZAM Mobile (Android)</b> — いつでも手軽なアクティブ・リコールと ZAM Academy セル。`,
+      app_f3: `<b>CLI 付きインストーラ（任意）</b> — <code>curl -fsSL https://zam-os.org/install.sh | sh</code>。`,
+      app_note_link: `GitHub Releases でダウンロード →`,
+      free_tag: `2. 無料で取り込み・学習`, free_h3: `無料コース・カリキュラム・デッキ`,
+      free_p: `LLM 呼び出しゼロでそのまま学習を始められます：`,
+      free_f1: `<b>ZAM Academy</b> — <a href="https://academy.zam-os.org">academy.zam-os.org</a> の無料練習アプリとカード。`,
+      free_f2: `<b>オープンライブラリ &amp; カリキュラム</b> — 公開教材や収録カリキュラムをすぐ追加。`,
+      free_f3: `<b>Anki <code>.apkg</code>・CSV・TSV</b> — 手持ちデッキをそのまま FSRS-6 へ。`,
+      free_f4: `<b>迷わない出題画面</b> — 用意された選択肢かシンプルな暗記カードのみで、AI 設定は表示しません。`,
+      free_note: `ローカル SQLite（~/.zam/zam.db）だけで完全にオフライン動作します。`,
+      modes_eyebrow: `3段階のシンプル設計`,
+      modes_h2: `初期設定はシンプル。必要なときだけ AI やエージェントを解放。`,
+      modes_sub: `使わない設定を隠すことで、毎日の復習に集中できます。`,
+      m1_tag: `初期設定 · Desktop &amp; Mobile`, m1_title: `無料モード`,
+      m1_p: `設定も AI コストも不要。<b>ZAM Academy</b>・カリキュラム・オープンライブラリ・<code>.apkg</code>/CSV に対応。音声や AI 取込は非表示です。`,
+      m2_tag: `設定スイッチ + AI ウィザード`, m2_title: `AI を使う`,
+      m2_p: `設定で <b>AI を使う</b> に切り替えウィザードを完了すると、記述フィードバック、問題バリエーション、音声、画像・PDF・トピックインポートが使えます。`,
+      m3_tag: `AI モード内の任意機能 · Desktop のみ`, m3_title: `Agentic Coding <span class="alpha-pill">Alpha</span>`,
+      m3_p: `<code>zam</code> CLI を PATH に導入し、ワークスペースにスキルを展開して <code>/zam</code> / MCP で連携。高性能モデル（<b>Claude Opus+、GPT 6.1 Sol+、Gemini 4+…</b>）が必須です。`,
+      what_eyebrow: `定着する仕組み`,
+      what_h2: `FSRS-6、前提グラフ、そしてローカル完結のデータ。`,
+      cap1_h3: `前提グラフ連動 FSRS-6`, cap1_p: `忘れる直前に出題し、土台が抜けていれば先に基礎から回復します。`,
+      cap2_h3: `自分の端末に保存`, cap2_p: `ローカル SQLite（<code>~/.zam/zam.db</code>）で完結。クラウド同期は任意です。`,
+      cap3_h3: `ナレッジアトラス`, cap3_p: `分野と定着度を島マップで可視化し、領域ごとの集中復習もできます。`,
+      cap4_h3: `共生的エージェント観察 (Alpha)`, cap4_p: `Desktop の Agentic Coding 有効時、実際の開発作業から重要概念をカード化します。`,
+      ag_eyebrow: `Desktop · 上級セットアップ · <span class="spark">Alpha</span>`,
+      ag_h2: `Agentic Coding の導入手順 <span class="alpha-pill">Alpha</span>`,
+      ag_sub: `<code>/zam</code> で実務から学ぶ最も長い導入パスです。AI モード内からのみ有効化でき、極めて高い推論性能を持つモデルが必要です。`,
+      ag_s1: `<b>1. 「AI を使う」を有効化</b> — 設定を切り替えて AI ウィザードでフロンティアモデルを設定します。`,
+      ag_s2: `<b>2. Agentic Coding (Alpha) をオン</b> — <code>zam</code> CLI の <code>PATH</code> 導入とワークスペースへのスキル展開が自動実行されます。`,
+      ag_s3: `<b>3. エージェントを MCP 接続</b> — Claude Code、Codex、Antigravity、Copilot、OpenCode、Goose、Hermes を連携します。`,
+      ag_s4: `<b>4. <code>/zam</code> とともに作業</b> — エージェント上で <code>/zam</code> を呼び、Studio や Mobile で復習します。`,
+      ag_model_note: `<b>モデル要件 (Alpha):</b> 安定した動作には <b>Claude Opus+</b>、<b>GPT 6.1 Sol+</b>、<b>Gemini 4+</b> などが必要です。`,
       copy_btn: `コピー`,
-      term_ok0: `✓ デスクトップアプリ + zam CLI · セキュリティ警告なし`,
-      term_cmt1: `# ガイド付きセットアップ`, term_ok1: `✓ ワークスペース · ローカル AI · データベース · /zam スキル`,
-      term_cmt2: `# または codex · copilot · goose …`, term_ok2: `✓ MCP サーバー設定済み`,
-      term_cmt3: `# エージェントを開き、タスクを始めて、それから：`,
-      how_eyebrow: `しくみ`, how_h2: `小さくて正直な語彙。`,
-      def_token: `覚える価値のある原子的な概念。ブルームのレベル（1 記憶 → 5 創造）が付きます。`,
-      def_card: `ある token に対するあなた個人の間隔反復の状態。FSRS-5 が予定します。`,
-      def_prereq: `先に理解すべきことのグラフ。ZAM は、土台がちょうど抜け落ちた概念は出題しません。`,
-      def_session: `作業と学習のすべてのエピソードが記録されるので、評価は本物の証拠に基づきます。`,
-      how_foot: `学習エンジンは、LLM に一切依存しない <b>AI 非依存のカーネル</b>——エージェントはそれを動かすだけ。オープンソース、Apache-2.0。`,
-      foot_tagline: `<span class="zam-note">Zam——バイエルン語で「一緒に」。</span> 共生する学習カーネル：あなたの AI が有能になるほど、あなたも有能になる。`,
+      term_cmt0: `# Desktop 設定で Agentic Coding を有効化すると自動展開されます`, term_cmt0b: `# 手動実行する場合：`,
+      term_cmt1: `# ワークスペース · フロンティア AI · /zam スキル`, term_ok1: `✓ zam CLI を PATH に導入 · スキル展開完了`,
+      term_cmt2: `# または antigravity · codex · copilot …`, term_ok2: `✓ MCP サーバー設定完了`,
+      term_cmt3: `# ワークスペース内でエージェントを開いて実行：`,
+      how_eyebrow: `しくみ`, how_h2: `小さく誠実な基本語彙。`,
+      def_token: `ブルーム段階（1 記憶 → 5 創造）を持つ最小の概念。`,
+      def_card: `FSRS-6 で予定されたあなた専用の復習状態。`,
+      def_prereq: `前提知識のグラフ。基礎を忘れた状態で応用は問いません。`,
+      def_session: `作業と学習の記録から実態に即した評価を行います。`,
+      how_foot: `学習エンジンは LLM 非依存の <b>AI アグノスティック・カーネル</b>。無料モードはその上で直接オフライン動作します。Apache-2.0。`,
+      foot_tagline: `<span class="zam-note">Zam — バイエルン語で「一緒に」。</span> 初期設定は無料オフライン、必要なときだけ AI と Agentic Coding (Alpha)。`,
       foot_grp_project: `プロジェクト`, foot_project_source: `ソース`, foot_project_usage: `使い方`, foot_project_arch: `アーキテクチャ`,
-      foot_grp_start: `スタート`, foot_start_download: `ダウンロード`, foot_start_quickstart: `クイックスタート`, foot_start_contribute: `貢献する`
+      foot_grp_start: `スタート`, foot_start_download: `ダウンロード`, foot_start_quickstart: `無料スタート`, foot_start_agentic: `Agentic Coding (Alpha)`, foot_start_contribute: `貢献する`
     }
   };
 
@@ -764,12 +914,12 @@
   apply(pick());
 })();
 
-/* ---------- Copy quickstart ---------- */
+/* ---------- Copy Agentic commands ---------- */
 (function () {
   var btn = document.getElementById("copyBtn");
   if (!btn) return;
   btn.addEventListener("click", function () {
-    var cmds = "curl -fsSL https://zam-os.org/install.sh | sh\nzam init\nzam agent connect claude-code\n# then type /zam in your agent";
+    var cmds = "zam init\nzam agent connect claude-code\n# then type /zam in your agent";
     var label = btn.getAttribute("data-en") || "Copy";
     var done = function () { btn.textContent = "✓"; setTimeout(function () { btn.textContent = label; }, 1600); };
     if (navigator.clipboard) { navigator.clipboard.writeText(cmds).then(done, done); } else { done(); }
